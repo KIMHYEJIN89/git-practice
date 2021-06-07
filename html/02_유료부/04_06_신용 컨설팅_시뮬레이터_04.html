@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<title>삼성카드 통합플랫폼TFT</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bzw/font.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/ui.css" />
+	<script type="text/javascript" src="../../resource/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/slick.min.js"></script>
+
+  <script src="../../resource/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bzm/jquery.ui.totop.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/waypoints.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/ycounter.v3.0.js"></script>
+
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/common.js"></script>
+
+
+</head>
+
+<body>
+	<div id="wrap">
+
+		<!-- s: header -->
+		<div id="header">
+			<div class="leftMenu">
+				<a href="#none" class="btnBack">이전</a>
+				<h1 class="title">신용 컨설팅</h1>
+			</div>
+			<div class="rightMenu">
+				<a href="#none" class="btnHome">홈</a>
+				<!-- <a href="#none" class="btnGnb">메뉴 열기<span></span></a>
+				<a href="#none" class="btnClose">메뉴 닫기</a> -->
+			</div>
+		</div>
+		<!-- e: header -->
+
+
+		<!-- s: gnb -->
+		<!-- <div id="gnb">
+			<div class="gnbWrap">
+				<div class="gnbDimm"></div>
+				<div class="gnbCont">
+					<ul class="gnbDepth1">
+						<li><a href="#none" class="btnGnbDepth1">신용 메인</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 평점 분석</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 변동내역</a></li>
+						<li><a href="#none" class="btnGnbDepth1">나의 금융 현황</a></li>
+						<li><a href="#none" class="btnGnbDepth1 on">신용 컨설팅</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 Q&amp;A</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- s: 2depth -->
+			<div class="snbDepth2">
+				<ul class="snbLst2">
+					<li><a href="#void" class="btnDepth2">요약</a></li>
+					<li><a href="#void" class="btnDepth2">상환</a></li>
+					<li><a href="#void" class="btnDepth2">부채</a></li>
+					<li><a href="#void" class="btnDepth2">기간</a></li>
+					<li><a href="#void" class="btnDepth2">포트폴리오</a></li>
+					<li><a href="#void" class="btnDepth2 on">시뮬레이터</a></li>
+				</ul>
+			</div>
+			<!-- e: 2depth -->
+		</div>
+		<!-- e: gnb -->
+
+		<!-- s: container -->
+		<div id="container">
+
+			<div class="consultingWrap">
+				<div class="simulatorBox">
+					<div class="simBoxTop">
+						<span class="label fontNum">STEP 4</span> 아래 정보가 맞는지 확인하세요.
+					</div>
+					<div class="simBoxCon">
+						<h3 class="conTitH3">
+							연체정보 변경내역
+						</h3>
+						<table class="basicTbl">
+							<caption>연체정보 변경내역표</caption>
+							<colgroup>
+								<col style="width:auto;">
+								<col style="width:29%;">
+								<col style="width:29%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">변경항목</th>
+									<th scope="col">변경전</th>
+									<th scope="col" class="pointColor1"><strong>변경후</strong></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">채무불이행 금액</th>
+									<td><span class="fontNum">10,000</span>천원</td>
+									<td class="pointColor1"><strong><span class="fontNum">20,000</span>천원</strong></td>
+								</tr>
+								<tr>
+									<th scope="row">단기연체 금액</th>
+									<td><span class="fontNum">10,000</span>천원</td>
+									<td class="pointColor1"><strong><span class="fontNum">20,000</span>천원</strong></td>
+								</tr>
+								<tr>
+									<th scope="row">단기연체 최장기간</th>
+									<td><span class="fontNum">719</span>일</td>
+									<td class="pointColor1"><strong><span class="fontNum">510</span>일</strong></td>
+								</tr>
+							</tbody>
+						</table>
+						<h3 class="conTitH3">
+							여신정보 변경내역
+						</h3>
+						<table class="basicTbl">
+							<caption>여신정보 변경내역표</caption>
+							<colgroup>
+								<col style="width:auto;">
+								<col style="width:29%;">
+								<col style="width:29%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">변경항목</th>
+									<th scope="col">변경전</th>
+									<th scope="col" class="pointColor1"><strong>변경후</strong></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">신용대출 총액</th>
+									<td><span class="fontNum">11,000</span>천원</td>
+									<td class="pointColor1"><strong><span class="fontNum">520</span>천원</strong></td>
+								</tr>
+								<tr>
+									<th scope="row">담보대출 총액</th>
+									<td><span class="fontNum">0</span>천원</td>
+									<td class="pointColor1"><strong><span class="fontNum">590</span>천원</strong></td>
+								</tr>
+								<tr>
+									<th scope="row">대출업체 수</th>
+									<td><span class="fontNum">1</span>일</td>
+									<td class="pointColor1"><strong><span class="fontNum">2</span>일</strong></td>
+								</tr>
+							</tbody>
+						</table>
+						<h3 class="conTitH3">
+							신용카드 정보 변경내역
+						</h3>
+						<table class="basicTbl">
+							<caption>신용카드 정보 변경내역표</caption>
+							<colgroup>
+								<col style="width:auto;">
+								<col style="width:29%;">
+								<col style="width:29%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">변경항목</th>
+									<th scope="col">변경전</th>
+									<th scope="col" class="pointColor1"><strong>변경후</strong></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">일시불 평균 금액</th>
+									<td><span class="fontNum">560</span>천원</td>
+									<td class="pointColor1"><strong><span class="fontNum">0</span>천원</strong></td>
+								</tr>
+								<tr>
+									<th scope="row">할부 평균 금액</th>
+									<td><span class="fontNum">100</span>천원</td>
+									<td class="pointColor1"><strong><span class="fontNum">0</span>천원</strong></td>
+								</tr>
+								<tr>
+									<th scope="row">단기카드대출<br />(현금서비스)<br>사용빈도</th>
+									<td><span class="fontNum">0</span>개월</td>
+									<td class="pointColor1"><strong><span class="fontNum">0</span>개월</strong></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btnWrap type3">
+						<ul class="btnList clfix">
+							<li><a href="#void" class="btnType type2 medium">이전</a></li>
+							<li><a href="javascript:layerPopup('layerPopWrap0');" class="btnType type1 medium">결과보기</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- s: 유의사항 -->
+				<div class="noticeWrap">
+					<h3 class="noticeTit">유의사항</h3>
+					<div class="infoCont">
+						<ul class="list">
+							<li>본 시뮬레이터를 통해 산출되는 변경 전 정보는 당월 <em class="fontNum">15</em>일~말일에 조회할 경우 다른 페이지에서 조회되는 내역과 다소 상이할 수 있습니다.</li>
+						</ul>
+					</div>
+				</div>
+				<!-- e: 유의사항 -->
+			</div>
+			<!-- e: consultingWrap -->
+
+		</div>
+		<!-- e: container -->
+
+
+
+		<!-- s: footer -->
+		<div id="footer">
+			<div>
+				<!-- 공지사항 -->
+				<div class="ft-con ft-con1">
+					<div class="ft-inner">
+						<dl class="dl-notice clfix">
+							<dt class="tit"><span class="ico-notice"></span>공지사항</dt>
+							<dd>
+								<a href="#nolink" id="noticeOpenPop" data-noticeseq=""><span class="notice-subject"></span></a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- 신용정보사유 코드 조회 -->
+				<div class="ft-con ft-con2">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li class="last">
+								<span class="ft-input-wrap">
+									<input type="text" id="certi_code" name="certi_code" title="신용정보사유 코드조회" placeholder="신용정보사유 코드조회">
+									<button title="새창열림" class="btn-ft-search">검색하기</button>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 약관 영역 -->
+				<div class="ft-con ft-con3">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="03"><strong>개인정보취급방침</strong></a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="06"><strong>개인정보처리방침</strong></a>
+							</li>
+						</ul>
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="01">상품 이용약관</a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="02">웹서비스 이용약관</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ft-con  ft-con4">
+					<div class="ft-inner">
+						<address class="ft-addr">서울시 영등포구 국회대로74길 4(여의도동) NICE평가정보㈜</address>
+						<ul class="list-ft-info clfix">
+							<li>대표이사 신희부</li>
+							<li class="last">사업자등록번호 116-81-15020</li>
+						</ul>
+						<p class="txt-copyright">ⓒ NICE INFORMATION CO., LDT.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e: footer -->
+	</div>
+
+	<!-- 시뮬레이터 사전동의 팝업 -->
+	<div id="layerPopWrap0" class="layerPopWrap">
+		<div class="popWrap">
+			<div class="popTop">
+				<h1>크레딧 시뮬레이터 사전동의</h1>
+				<a href="javascript:layerPopClose();" class="btnClose"></a>
+			</div>
+			<div class="popCon">
+				<ul class="simulatorAgreePopList">
+					<li><strong class="fontNum">1.</strong> 본 시뮬레이션 결과는 실제와 100% 일치하지 않을 수 있습니다.</li>
+					<li><strong class="fontNum">2.</strong> 본 시뮬레이션은 정보 변경 후 다른 변경 없이 <em class="fontNum">12</em>개월간 유지했을 경우를 가정하고 있습니다.</li>
+					<li><strong class="fontNum">3.</strong> 등급산출이 불가능하거나, 면책파산, 신용회복, 개인회생 등이 진행중인 경우 시뮬레이션을 적용할 수 없습니다.</li>
+					<li><strong class="fontNum">4.</strong> 본 시뮬레이션은 보다 원활한 신용관리를 위한 참고 자료로만 활용해야 합니다.</li>
+					<li><strong class="fontNum">5.</strong> 시뮬레이션 결과는 외부 제출자료 등으로 활용할 수 없고  NICE평가정보가 보증하거나 책임지지 않습니다.</li>
+					<li><strong class="fontNum">6.</strong> 고객님이 입력하거나 조정한 데이터는 별도 저장되지 않습니다.</li>
+				</ul>
+				<div class="btnAgreeChkWrap">
+					<input type="checkbox" id="btnAgreeChk">
+					<label for="btnAgreeChk">위 내용을 충분히 숙지하였으며,<br>동의합니다.</label>
+				</div>
+			</div>
+			<div class="btnWrap type1">
+				<a href="#void" class="btnType type1 medium straight btnResult">결과보기</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

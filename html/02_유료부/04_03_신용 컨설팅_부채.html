@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<title>삼성카드 통합플랫폼TFT</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bzw/font.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/ui.css" />
+	<script type="text/javascript" src="../../resource/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/slick.min.js"></script>
+
+  <script src="../../resource/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bzm/jquery.ui.totop.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/waypoints.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/ycounter.v3.0.js"></script>
+
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/common.js"></script>
+
+
+	<script>
+			$(function(){
+				$('.graphicInfo').each(function(){
+		        $(this).waypoint({
+		            handler: function(){
+		                $(this).find('.graphicBar').addClass('is-animated');
+		            },
+		            offset: '80%'
+		        });
+		    });
+			});
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+
+		<!-- s: header -->
+		<div id="header">
+			<div class="leftMenu">
+				<a href="#none" class="btnBack">이전</a>
+				<h1 class="title">신용 컨설팅</h1>
+			</div>
+			<div class="rightMenu">
+				<a href="#none" class="btnHome">홈</a>
+				<!-- <a href="#none" class="btnGnb">메뉴 열기<span></span></a>
+				<a href="#none" class="btnClose">메뉴 닫기</a> -->
+			</div>
+		</div>
+		<!-- e: header -->
+
+
+		<!-- s: gnb -->
+		<!-- <div id="gnb">
+			<div class="gnbWrap">
+				<div class="gnbDimm"></div>
+				<div class="gnbCont">
+					<ul class="gnbDepth1">
+						<li><a href="#none" class="btnGnbDepth1">신용 메인</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 평점 분석</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 변동내역</a></li>
+						<li><a href="#none" class="btnGnbDepth1">나의 금융 현황</a></li>
+						<li><a href="#none" class="btnGnbDepth1 on">신용 컨설팅</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 Q&amp;A</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- s: 2depth -->
+			<div class="snbDepth2">
+				<ul class="snbLst2">
+					<li><a href="#void" class="btnDepth2">요약</a></li>
+					<li><a href="#void" class="btnDepth2">상환</a></li>
+					<li><a href="#void" class="btnDepth2 on">부채</a></li>
+					<li><a href="#void" class="btnDepth2">기간</a></li>
+					<li><a href="#void" class="btnDepth2">포트폴리오</a></li>
+					<li><a href="#void" class="btnDepth2">시뮬레이터</a></li>
+				</ul>
+			</div>
+			<!-- e: 2depth -->
+		</div>
+		<!-- e: gnb -->
+
+		<!-- s: container -->
+		<div id="container">
+
+			<div class="consultingWrap">
+				<!-- s: 나의 부채 수준은? -->
+				<div class="graphicBox pdType">
+					<dl class="graphicDl">
+						<dt>나의 부채 수준은?</dt>
+						<dd>
+							<!-- level_01 ~ level_06 클래스로 레벨 표시 문자따로 표기 -->
+							<!-- 매우 안정, 안정, 보통, 주의, 우려, 산출불가 -->
+							<div class="graphicInfo level_04">
+								<div class="percent">
+									<p class="txt">전체 대상자 중</p>
+									<!-- top1(상위20%), top2(상위40%), bottom1(하위20%), bottom2(하위40%)-->
+									<p class="number bottom2">하위 <strong class="fontNum _counter" data-ycount="40">40</strong><strong class="fontNum unit">%</strong></p>
+								</div>
+								<div class="graphicTxt">주의</div>
+								<div class="graphicBar"></div>
+							</div>
+							<div class="lstBox">
+								<ul class="lstType3 line">
+									<li>고객님의 현재 부채수준은 동일성별에 비해 낮은 수준이며, 동일연령에 비해 낮은 수준입니다. 동일연령에 비해 높은 수준입니다.<br>고객님의 현재 부채수준은 전체 대상자 중 하위 <em class="fontNum">40</em>% 수준입니다.</li>
+								</ul>
+								<ul class="lstType2">
+									<li>주택담보를 제외한 일반대출 거래건수가  현재 평균 수준입니다.</li>
+									<li>안정적인 대출거래 규모를 유지하고 계십니다.</li>
+									<li>금융권에 등록된 채무보증 개설내역이 없습니다.</li>
+								</ul>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<!-- e: 나의 부채 수준은? -->
+				<!-- s: 상환수준 관계지표 -->
+				<div class="repayInfoBox2 pdType">
+					<div class="titWrap">
+						<h3 class="title">부채수준 관계지표</h3>
+					</div>
+					<div class="infoBox">
+						<ul class="list">
+							<li>
+								<div class="tit">
+									<span>신용대출</span>
+									<div class="tooltip">
+										<button type="button" class="btnTip">도움말</button>
+										<div class="content">
+											<ul class="txt">
+												<li>신용대출은 전체 대출 중에 주택담보를 제외한 대출을 의미합니다.</li>
+											</ul>
+											<a href="#void" class="btnTipClose">닫기</a>
+										</div>
+									</div>
+								</div>
+								<div class="cont">
+									<span class="cnt"><em class="fontNum">999</em>건</span>
+									<span class="price on"><em class="fontNum">999,999</em>천원</span>
+								</div>
+							</li>
+							<li>
+								<div class="tit">
+									<span>보증</span>
+								</div>
+								<div class="cont">
+									<span class="cnt"><em class="fontNum">0</em>건</span>
+									<span class="price"><em class="fontNum">0</em>천원</span>
+								</div>
+							</li>
+							<li>
+								<div class="tit">
+									<span>주택담보대출</span>
+								</div>
+								<div class="cont">
+									<span class="cnt"><em class="fontNum">1</em>건</span>
+									<span class="price on"><em class="fontNum">1,000</em>천원</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- e: 상환수준 관계지표 -->
+				<!-- s: 유의사항 -->
+				<div class="noticeWrap type2 pdType">
+					<h3 class="noticeTit">유의사항</h3>
+					<div class="infoCont">
+						<ul class="list">
+							<li>대출 및 보증거래를 하는 경우에는 적정 수준의 규모를 유지하면서 안정적인 상환을 지속해야 좋은 신용도를 평가 받을 수 있습니다.</li>
+							<li>여신금융거래를 할 때는 장기적인 자금설계 하에 본인의 예상 수입을 고려하여 운용해야합니다.</li>
+							<li>현재 등급이 양호하다면 여러 금융기관을 비교하여 우수한 금리를 받을 수 있으니 본인의 신용상태를 정확하게 파악하고 있으면 많은 도움이 됩니다.</li>
+							<li>대출을 받고자 할 때는 여러 금융기관으로 분산하는 것보다는 주거래 기관을 선정하여 집중하는 것이 보다 유리합니다.</li>
+						</ul>
+					</div>
+					<button type="button" class="btnMore">더보기</button>
+				</div>
+				<!-- e: 유의사항 -->
+
+			</div>
+			<!-- e: consultingWrap -->
+
+		</div>
+		<!-- e: container -->
+
+
+
+		<!-- s: footer -->
+		<div id="footer">
+			<div>
+				<!-- 공지사항 -->
+				<div class="ft-con ft-con1">
+					<div class="ft-inner">
+						<dl class="dl-notice clfix">
+							<dt class="tit"><span class="ico-notice"></span>공지사항</dt>
+							<dd>
+								<a href="#nolink" id="noticeOpenPop" data-noticeseq=""><span class="notice-subject"></span></a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- 신용정보사유 코드 조회 -->
+				<div class="ft-con ft-con2">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li class="last">
+								<span class="ft-input-wrap">
+									<input type="text" id="certi_code" name="certi_code" title="신용정보사유 코드조회" placeholder="신용정보사유 코드조회">
+									<button title="새창열림" class="btn-ft-search">검색하기</button>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 약관 영역 -->
+				<div class="ft-con ft-con3">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="03"><strong>개인정보취급방침</strong></a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="06"><strong>개인정보처리방침</strong></a>
+							</li>
+						</ul>
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="01">상품 이용약관</a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="02">웹서비스 이용약관</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ft-con  ft-con4">
+					<div class="ft-inner">
+						<address class="ft-addr">서울시 영등포구 국회대로74길 4(여의도동) NICE평가정보㈜</address>
+						<ul class="list-ft-info clfix">
+							<li>대표이사 신희부</li>
+							<li class="last">사업자등록번호 116-81-15020</li>
+						</ul>
+						<p class="txt-copyright">ⓒ NICE INFORMATION CO., LDT.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e: footer -->
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,717 @@
+@charset "euc-kr";
+
+
+/***************************************************************************** 공통 *****************************************************************************/
+
+
+/* title & text */
+.titType1{margin-bottom:25px;font-size:18px;font-weight:400}
+.titType1 .btnHelp{margin:4px 0 0 5px}
+.titType2{line-height:27px;font-size:19px}
+.titType2 .big{display:inline-block;font-size:23px;vertical-align:top}
+
+.titType3{margin-top:30px;margin-bottom:10px;line-height:1.2;font-size:18px;font-weight:400;color:#191919;text-indent:5px;letter-spacing:-0.5px}
+.titType4{padding-top:25px;margin-bottom:10px;line-height:1.2;font-size:18px;font-weight:400;color:#191919}
+
+.btnMore {width:100%;display:block;padding:19px 0 28px;border:none;border-top:1px solid #e9ebec;outline:none;color:#9b9fa8;background:none;box-sizing:border-box}
+.btnMore:after{display:inline-block;content:"";width:11px;height:6px;margin-left:8px;vertical-align:2px;background:url('../../../../img/bam/ssc/cp/ico_more_down.png') no-repeat center center;background-size:11px auto}
+.btnMore.on:after{background:url('../../../../img/bam/ssc/cp/ico_more_up.png') no-repeat center center;background-size:11px auto}
+.moreCont{display:none}
+
+.pointColor1{color:#2e81f8 !important}
+
+.tooltip{margin-top:5px}
+
+/***************************************************************************** 신용 개설 *****************************************************************************/
+.summaryArea .summMonth{margin-top:12px;border-top:1px solid #d5d5d5;padding-top:10px;padding-bottom:34px}
+.summaryArea .summMonth .list{display:none}
+.summaryArea .summMonth .list.on{display:block}
+.summaryArea .summMonth .list li{position:relative;margin-top:7px;padding:10px 15px 9px 19px;border-radius:5px;border:1px solid #e5e5e5;box-shadow:0 2px 3px 0 rgba(0,0,0,0.12)}
+.summaryArea .summMonth .list.is-animated li{animation:fadeInLeft .5s ease-out}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+1){animation-delay:0s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+2){animation-delay:.1s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+3){animation-delay:.2s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+4){animation-delay:.3s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+5){animation-delay:.4s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+6){animation-delay:.5s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+7){animation-delay:.6s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+8){animation-delay:.7s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+9){animation-delay:.8s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+10){animation-delay:.9s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+11){animation-delay:1.0s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+12){animation-delay:1.1s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+13){animation-delay:1.2s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+14){animation-delay:1.3s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+15){animation-delay:1.4s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+16){animation-delay:1.5s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+17){animation-delay:1.6s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+18){animation-delay:1.7s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+19){animation-delay:1.8s}
+.summaryArea .summMonth .list.is-animated li:nth-child(20n+20){animation-delay:1.9s}
+@-webkit-keyframes fadeInLeft{
+  0%{opacity:0;-webkit-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0)}
+  100%{opacity:1;-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}
+}
+@keyframes fadeInLeft{
+  0%{opacity:0;-webkit-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0)}
+  100%{opacity:1;-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}
+}
+.summaryArea .summMonth .list .noData{padding:10px 0}
+.summaryArea .summMonth .list li:first-child{margin-top:0}
+.summaryArea .summMonth .list li:before{display:block;content:'';position:absolute;top:0;left:0;bottom:0;border-radius:4px 0 0 4px;width:4px}
+.summaryArea .summMonth .list li:nth-child(5n+1):before{background-color:#0059b6}
+.summaryArea .summMonth .list li:nth-child(5n+2):before{background-color:#00b3e3}
+.summaryArea .summMonth .list li:nth-child(5n+3):before{background-color:#fc6719}
+.summaryArea .summMonth .list li:nth-child(5n+4):before{background-color:#02afc2}
+.summaryArea .summMonth .list li:nth-child(5n+5):before{background-color:#555251}
+.summaryArea .summMonth .list li .gridSet{display:table;table-layout:fixed;width:100%}
+.summaryArea .summMonth .list li .grid{display:table-cell;vertical-align:middle;color:#888;font-weight:700;word-wrap:break-word;word-break:break-all}
+.summaryArea .summMonth .list li .grid:last-child{width:45%;text-align:right;color:#000}
+.summaryArea .summMonth .list li .name{display:block;color:#000;font-size:15px}
+.summaryArea .summMonth .list li .fontNum{font-size:18px;font-weight:800}
+.selBox{margin-bottom:10px;text-align:center}
+.selBox .cardSelect{width:auto;padding-right:20px !important;border:0;color:#000;font-size:17px;font-weight:700;line-height:26px;letter-spacing:-0.5px;background-image:url('../../../../img/bam/ssc/cp/card/bg_card_select.png');background-size:auto 6px}
+.selBox .cardSelect option{font-size:14px;color:#333}
+
+.ratioArea{padding-top:18px;padding-bottom:18px}
+.ratioArea .graphWrap{padding:15px 0 0;border-top:1px solid #d5d5d5}
+.graphWrap{margin-top:11px}
+.graphWrap .bar{position:relative;height:35px;margin-bottom:7px}
+.graphWrap .bar:before{content:'';display:block;position:absolute;top:0;left:0;width:100%;height:17px;background-color:#eeeeee}
+.graphWrap .bar .line{position:absolute;top:0;left:0;height:17px}
+.graphWrap .bar .line:nth-child(9n+1), .graphBox li:nth-child(9n+1) .icoSquare{background-color:#000}
+.graphWrap .bar .line:nth-child(9n+2), .graphBox li:nth-child(9n+2) .icoSquare{background-color:#004aac}
+.graphWrap .bar .line:nth-child(9n+3), .graphBox li:nth-child(9n+3) .icoSquare{background-color:#5f35a8}
+.graphWrap .bar .line:nth-child(9n+4), .graphBox li:nth-child(9n+4) .icoSquare{background-color:#2ebdf9}
+.graphWrap .bar .line:nth-child(9n+5), .graphBox li:nth-child(9n+5) .icoSquare{background-color:#007e6f}
+.graphWrap .bar .line:nth-child(9n+6), .graphBox li:nth-child(9n+6) .icoSquare{background-color:#2e81f8}
+.graphWrap .bar .line:nth-child(9n+7), .graphBox li:nth-child(9n+7) .icoSquare{background-color:#d2203e}
+.graphWrap .bar .line:nth-child(9n+8), .graphBox li:nth-child(9n+8) .icoSquare{background-color:#ffcc00}
+.graphWrap .bar .line:nth-child(9n+9), .graphBox li:nth-child(9n+9) .icoSquare{background-color:#999}
+.graphWrap .bar .line.point, .graphBox li .icoSquare.point{background-color:#1e75d6}
+.graphWrap .bar .line.normal, .graphBox li .icoSquare.normal{background-color:#ffeb7d}
+.graphWrap .bar .txt{font-size:14px;color:#666}
+.graphWrap .bar .gLeft{position:absolute;bottom:-2px;left:0}
+.graphWrap .bar .gRight{position:absolute;bottom:-2px;right:0}
+.graphWrap .graph .head{overflow:hidden;margin-bottom:6px}
+.graphWrap .graph .title{float:left;color:#666;font-weight:700;font-size:15px}
+.graphWrap .graph .desc{float:right;color:#000;margin-top:-3px}
+.graphWrap .graph .desc .fontNum{font-size:19px;font-weight:800}
+.graphBox{border:1px solid #e5e5e5;padding:5px 0}
+.graphBox li{display:table;table-layout:fixed;width:100%;padding:4px 15px}
+.graphBox li .item{display:table-cell;vertical-align:top;color:#000}
+.graphBox li .item.division{width:50%;color:#666}
+.graphBox li .item.price{width:30%;text-align:right}
+.graphBox li .item.percent{width:20%;text-align:right}
+.graphBox li .item .icoSquare{display:inline-block;vertical-align:middle;width:10px;height:10px;margin-right:10px}
+.graphBox li .item .fontNum{font-size:15px}
+.graphBox li .empty{margin:10px 0;padding:45px 0 0;position:relative;text-align:center;color:#666}
+.graphBox li .empty:before{position:absolute;top:0;left:50%;margin-left:-18px;display:block;content:'';width:35px;height:35px;background:url('../../../../img/bam/ssc/cp/bg_empty.png') no-repeat 0 0;background-size:100% 100%}
+.graphForm{margin:3px 0 15px;padding:15px;color:#888;font-size:13px;text-align:center}
+.reportArea > .titWrap{padding:21px 20px 16px}
+.tableWrap.typeTable{margin-top:13px}
+.tableWrap.typeTable thead th{border:1px solid #c0c0c0;font-weight:400;color:#333;padding:6px 0}
+.tableWrap.typeTable thead th:first-child{border-left:0}
+.tableWrap.typeTable thead th:last-child{border-right:0}
+.tableWrap.typeTable tbody th{padding:6px;border-bottom:1px solid #e5e5e5;background:#f6f6f6;color:#666}
+.tableWrap.typeTable tbody td{padding:6px;border-left:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;color:#000}
+.tableWrap.typeTable tbody td:first-child{border-left-width:0}
+.tableWrap.typeTable tbody .fontNum{font-weight:400;font-size:15px}
+.tableWrap.typeTable .cate{display:block;font-size:13px;color:#1e75d6}
+.tableWrap.typeList{border-bottom:1px solid #d5d5d5;outline:none}
+.tableWrap.typeList table th{font-weight:400}
+.tableWrap.typeList tbody .fontNum{font-weight:800}
+.tableWrap.typeList th, .tableWrap.typeList td{padding:2px 0;letter-spacing:-0.3px;color:#000}
+.tableWrap.typeList td.empty{color:#666;text-align:center;padding:30px 0}
+.tableWrap.typeList .subTable table{margin:5px 0;background:#f0f0f0}
+.tableWrap.typeList .subTable table th, .tableWrap.typeList .subTable table td{color:#666;line-height:18px}
+.tableWrap.typeList .subTable table th{padding-left:17px}
+.tableWrap.typeList .subTable table td{padding-right:17px}
+.tableWrap.typeList .subTable table tr:first-child th, .tableWrap.typeList .subTable table tr:first-child td{padding-top:12px}
+.tableWrap.typeList .subTable table tr:last-child th, .tableWrap.typeList .subTable table tr:last-child td{padding-bottom:12px}
+
+
+.layerSelect{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:999}
+.layerSelList{overflow-y:auto;position:absolute;top:50%;left:50%;width:200px;max-height:300px;margin-left:-100px}
+.layerSelList .sel{display:block;padding:12px 10px;background-color:#1a1a1a;color:#ffffff;font-family:'Roboto';font-size:16px;text-align:center}
+.layerSelList .sel.selected{background-color:#ff5200}
+.layerSelList li:first-child .sel{padding-top:15px;border-radius:5px 5px 0 0}
+.layerSelList li:last-child .sel{padding-bottom:15px;border-radius:0 0 5px 5px}
+
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************** 신용 컨설팅 *****************************************************************************/
+.graphicBox{padding:15px 24px}
+.graphicBox:first-child{padding-top:30px}
+.graphicBox .graphicDl > dt{padding:0 0 15px;font-size:18px;color:#000;font-weight:bold}
+.graphicInfo{margin-bottom:30px}
+.graphicInfo:after{display:block;content:'';clear:both}
+.graphicInfo .percent{float:right;text-align:right}
+.graphicInfo .percent .txt{font-size:16px;color:#9b9fa8}
+.graphicInfo .percent .fontNumber{font-weight:bold;font-style:italic;font-size:22px;line-height:29px}
+.graphicInfo .percent .fontNumber.top1{color:#08bbe4}
+.graphicInfo .percent .fontNumber.top2{color:#0870e4}
+.graphicInfo .percent .fontNumber.bottom1{color:#ff5252}
+.graphicInfo .percent .fontNumber.bottom2{color:#ff8f52}
+.graphicInfo .percent .fontNumber .fontNum{font-size:29px;font-weight:700}
+.graphicInfo .percent .fontNumber .unit{font-size:19px}
+.graphicInfo .percent + .graphicTxt{margin-top:15px}
+.graphicInfo .percent .number{font-size:21px}
+.graphicInfo .percent .number .fontNum{font-size:24px}
+.graphicInfo .graphicTxt{display:inline-block;vertical-align:middle;margin-bottom:18px;height:29px;line-height:29px;color:#000;font-size:21px;font-weight:bold}
+.graphicInfo .graphicTxt:after{content:'';display:inline-block;vertical-align:middle;margin:-4px 0 0 7px;background-position:0 center;background-repeat:no-repeat;background-size:100% 100%}
+.graphicInfo .graphicBar{position:relative;height:5px;background:#e8e8e8;border-radius:5px}
+.graphicInfo .graphicBar:after{display:block;content:'';position:absolute;top:0;left:0;height:100%;border-radius:5px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);}
+.graphicInfo .graphicBar.is-animated:after{-webkit-animation:graphicBar .8s cubic-bezier(0.645,0.045,0.355,1.000);animation:graphicBar .8s cubic-bezier(0.645,0.045,0.355,1.000)}
+@-webkit-keyframes graphicBar{
+  0%{width:0}
+}
+@keyframes graphicBar{
+  0%{width:0}
+}
+/*매우 안정*/
+.graphicInfo.level_01 .graphicBar.is-animated:after{background:#0065f6;width:100%}
+.graphicInfo.level_01 .graphicTxt{color:#0065f6}
+.graphicInfo.level_01 .graphicTxt:after{width:22px;height:23px;background-image:url('../../../../img/bam/ssc/cp/bg_level_01.png')}
+/*안정*/
+.graphicInfo.level_02 .graphicBar.is-animated:after{background:#2e81f8;width:82.5%}
+.graphicInfo.level_02 .graphicTxt{color:#2e81f8}
+.graphicInfo.level_02 .graphicTxt:after{width:28px;height:22px;background-image:url('../../../../img/bam/ssc/cp/bg_level_02.png')}
+/*보통*/
+.graphicInfo.level_03 .graphicBar.is-animated:after{background:#25c343;width:65%}
+.graphicInfo.level_03 .graphicTxt{color:#25c343}
+.graphicInfo.level_03 .graphicTxt:after{width:28px;height:23px;background-image:url('../../../../img/bam/ssc/cp/bg_level_03.png')}
+/*주의*/
+.graphicInfo.level_04 .graphicBar.is-animated:after{background:#f0b106;width:47.5%}
+.graphicInfo.level_04 .graphicTxt{color:#f0b106}
+.graphicInfo.level_04 .graphicTxt:after{width:21px;height:23px;background-image:url('../../../../img/bam/ssc/cp/bg_level_04.png')}
+/*우려*/
+.graphicInfo.level_05 .graphicBar.is-animated:after{background:#d0112b;width:30%}
+.graphicInfo.level_05 .graphicTxt{color:#d0112b}
+.graphicInfo.level_05 .graphicTxt:after{width:22px;height:23px;background-image:url('../../../../img/bam/ssc/cp/bg_level_05.png')}
+/*산출불가*/
+.graphicInfo.level_06 .graphicBar.is-animated:after{background:#9b9fa8;width:100%}
+.graphicInfo.level_06 .graphicTxt{color:#9b9fa8}
+.graphicInfo.level_06 .graphicTxt:after{width:29px;height:23px;background-image:url('../../../../img/bam/ssc/cp/bg_level_06.png')}
+
+.commentWrap{padding-top:15px}
+.commentWrap .conTitH3{font-size:16px;margin-bottom:20px;color:#0b0d0f}
+.commentWrap .basicBox li{position:relative;padding-left:10px;margin-top:9px;font-size:15px;color:#575b63;line-height:18px;word-break:keep-all}
+.commentWrap .basicBox li:first-child{margin-top:0}
+.commentWrap .basicBox li:before{display:block;content:"";width:3px;height:3px;position:absolute;left:0;top:8px;background:#575b63;border-radius:100%}
+
+[class^=repayInfoBox] .titWrap{margin-bottom:0}
+.repayInfoBox{padding:20px 24px}
+.repayInfoBox .infoBox .list>li{position:relative;padding:18px 23% 15px 0;text-align:left;border-bottom:1px solid #f3f5f7;font-size:16px;color:#575b63}
+.repayInfoBox .infoBox .list>li:last-child{border-bottom:none}
+.repayInfoBox .infoBox .list>li .data{position:absolute;right:0;top:16px;display:block;min-width:68px;padding:2px 0;background:#dadde0;text-align:center;border-radius:12px;font-size:16px}
+.repayInfoBox .infoBox .list>li .data .fontNum{font-size:16px}
+.repayInfoBox .infoBox .list>li .data.on{background:#2e81f8;color:#fff}
+.repayInfoBox .infoBox .list>li .data.on .fontNum{color:#fff}
+.repayInfoBox.type2 .list>li{padding-right:39%}
+.repayInfoBox.type2 .list>li .data{min-width:100px}
+
+.repayInfoBox2 .infoBox .list>li{position:relative;display:table;width:100%;table-layout:fixed;padding:18px 0 15px;border-bottom:1px solid #f0f2f5}
+.repayInfoBox2 .infoBox .list>li:last-child{border-bottom:none}
+.repayInfoBox2 .infoBox .list>li .tit{display:table-cell;width:37%;text-align:left;font-size:16px}
+.repayInfoBox2 .infoBox .list>li .cont{display:table-cell;width:63%;text-align:right;font-size:16px}
+.repayInfoBox2 .infoBox .list>li .cont .cnt{font-weight:700;margin-right:13px}
+.repayInfoBox2 .infoBox .list>li .cont .price{display:inline-block;min-width:113px;padding:2px 0;background:#dadde0;text-align:center;border-radius:12px;font-size:16px}
+.repayInfoBox2 .infoBox .list>li .cont .price .fontNum{font-size:16px}
+.repayInfoBox2 .infoBox .list>li .cont .price.on{background:#2e81f8;color:#fff}
+.repayInfoBox2 .infoBox .list>li .cont .price.on .fontNum{color:#fff}
+.repayInfoBox2 .infoBox .tooltip{margin-top:0}
+
+@media all and (max-width:320px){
+    [class^=repayInfoBox] .infoBox .list>li br{display:none}
+}
+
+
+/***************************************************************************** 시뮬레이터 *****************************************************************************/
+.scrMotionWrap{position:fixed;top:63px;left:0;bottom:55px;width:100%;line-height:1.4;background-color:#ffffff;z-index:1}
+.scrMotionWrap .scrMotion{position:relative;height:100%;padding-top:0;text-align:center}
+.scrMotionWrap .scrMotionBx{position:relative;height:100%;padding:0 20px;overflow:hidden;}
+.scrMotionWrap .scrMotionBx2{background-color:#f0f2f5}
+.scrMotionWrap .scrMotionInner{position:absolute;top:0;left:15px;right:15px;}
+.scrMotionWrap .scrMotionBx1 .scrMotionInner{top:calc(50% - 101px)}
+.scrMotionWrap .scrMotionBx2 .scrMotionInner{top:calc(50% - 102px)}
+.scrMotionWrap .scrMotionBx3 .scrMotionInner{top:calc(50% - 154px)}
+.scrMotionWrap .scrTit{margin:0 0 30px;font-size:21px;font-weight:700;color:#000000;text-align:center}
+.scrMotionWrap .scrTxt{margin-bottom:15px;color:#575b63;font-size:16px}
+.scrMotionWrap .scrTxt:last-child{margin-bottom:0}
+.scrMotionWrap [class^=scrVisual]{position:relative;text-align:center;font-size:0}
+.scrMotionWrap .scrVisual1 > *{position:absolute}
+.scrMotionWrap .scrMotionBx1 .scrVisual1_1{opacity:0;top:5px;left:calc(50% - 46px)}
+.scrMotionWrap .scrMotionBx1 .scrVisual1_1 em , .scrVisual1_1:before, .scrVisual1_1:after{display:inline-block;animation:iconQ 1s linear infinite;vertical-align:top;font-family:'Roboto'}
+.scrMotionBx1 .scrVisual1_1:before, .scrVisual1_1:after {content:'?';color:#575b63;font-size:14px;font-weight:bold}
+.scrMotionWrap .slick-slide.slick-active .scrMotionBx1 .scrVisual1_1:before, .scrVisual1_1:after {animation-delay:0.2s}
+
+
+.scrMotionWrap .scrVisual1{margin-bottom:140px}
+.scrMotionWrap .scrVisual2{margin-bottom:23px}
+.scrMotionWrap .scrVisual3{margin-bottom:50px}
+
+.scrMotionWrap .scrMotionBx1 .scrVisual1_2{opacity:0;top:5px;left:calc(50% - 82px);width:104px;height:90px;background:url('../../../../img/bam/ssc/cp/img_simulator1.png') left top no-repeat;background-size:100%}
+.scrMotionWrap .scrMotionBx2 .scrVisual2_1{opacity:0;top:5px;left:calc(50% - 14px);width:93px;height:89px;background:url('../../../../img/bam/ssc/cp/img_simulator2.png') left top no-repeat;background-size:100%}
+.scrMotionWrap .scrMotionBx3 .scrVisual3_1{opacity:0;top:5px;left:calc(50% - 65px);width:93px;height:94px;background:url('../../../../img/bam/ssc/cp/img_simulator3.png') left top no-repeat;background-size:100%}
+
+
+.scrMotionWrap .slick-slide.slick-active .scrMotionBx1 .scrVisual1_1{animation:scrMotionBx1_1 0.8s ease-out both;-webkit-animation:scrMotionBx1_1 0.8s ease-out both;}
+.scrMotionWrap .slick-slide.slick-active .scrMotionBx1 .scrVisual1_2{animation:scrMotionBx1_2 0.8s ease-out both;-webkit-animation:scrMotionBx1_2 0.8s ease-out both;}
+
+.scrMotionWrap .slick-slide.slick-active .scrMotionBx2 .scrVisual2_1{animation:scrMotionBx2_1 0.8s ease-out both;-webkit-animation:scrMotionBx2_1 0.8s ease-out both;}
+
+.scrMotionWrap .slick-slide.slick-active .scrMotionBx3 .scrVisual3_1{animation:scrMotionBx1_2 0.8s ease-out both;-webkit-animation:scrMotionBx1_2 0.8s ease-out both;}
+
+@keyframes scrMotionBx1_1{
+  0% {transform:translateX(0);-webkit-transform:translateX(0)}
+  100% {opacity:1;transform:translateX(-10px);-webkit-transform:translateX(-10px)}
+}
+@-webkit-keyframes scrMotionBx1_1{
+  0% {transform:translateX(0);-webkit-transform:translateX(0)}
+  100% {opacity:1;transform:translateX(-10px);-webkit-transform:translateX(-10px)}
+}
+@keyframes scrMotionBx1_2{
+  0% {transform:translateX(0);-webkit-transform:translateX(0)}
+  100% {opacity:1;transform:translateX(25px);-webkit-transform:translateX(25px)}
+}
+@-webkit-keyframes scrMotionBx1_2{
+  0% {transform:translateX(0);-webkit-transform:translateX(0)}
+  100% {opacity:1;transform:translateX(25px);-webkit-transform:translateX(25px)}
+}
+
+
+@keyframes iconQ{
+    0%{margin-top:2px}
+    15%{margin-top:-2px}
+    30%{margin-top:2px}
+    100%{margin-top:2px}
+}
+
+
+@keyframes scrMotionBx2_1{
+  0% {transform:translateX(0);-webkit-transform:translateX(0)}
+  100% {opacity:1;transform:translateX(-25px);-webkit-transform:translateX(-25px))}
+}
+@-webkit-keyframes scrMotionBx2_1{
+  0% {transform:translateX(0);-webkit-transform:translateX(0)}
+  100% {opacity:1;transform:translateX(-25px);-webkit-transform:translateX(-25px)}
+}
+
+
+
+
+.scrMotionWrap .slick-dots{position:absolute;top:calc(50% - 30px);right:17px}
+.scrMotionWrap .slick-dots > li{margin-top:17px}
+.scrMotionWrap .slick-dots > li:first-child{margin-top:0}
+.scrMotionWrap .slick-dots button{display:block;width:11px;height:11px;border:none;background-color:#c1b8b8;color:transparent;font-size:0;text-indent:-999px;vertical-align:top;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+}
+.scrMotionWrap .slick-dots .slick-active button{background-color:#333333}
+.simulatorStart{position:fixed;left:0;right:0;bottom:0;z-index:1}
+.simulatorStart .btnType{padding:20px 0;background:#1e75d6;font-size:18px}
+
+
+.consultingWrap .simulatorBox{padding:30px 20px 20px}
+.consultingWrap .simulatorBox:last-child .btnWrap.type3{margin:50px 0 15px}
+.consultingWrap .conTitH3{margin:25px 0 20px;font-size:16px;color:#000}
+.consultingWrap .conTitH3:first-child{margin-top:0}
+
+.basicTbl{position:relative;table-layout:fixed;width:100%;border-top:1px solid #dadde0;border-bottom:1px solid #dadde0}
+.basicTbl + .basicTbl{margin-top:15px}
+.basicTbl thead th{padding:9px 0;font-weight:400;background:#f7f8fa;color:#575b63;font-size:16px}
+.basicTbl thead th:last-child{border-right:0}
+.basicTbl th:first-child,
+.basicTbl td:first-child{border-left:0;padding-left:0}
+.basicTbl th:last-child,
+.basicTbl td:last-child{padding-right:0}
+.basicTbl tbody th,
+.basicTbl tbody td{padding:10px 0;color:#000;word-wrap:break-word;word-break:break-all;font-size:16px}
+.basicTbl tbody th{text-align:center;font-weight:400}
+.basicTbl tbody td{text-align:center}
+.basicTbl tbody td .fontNum{font-size:16px}
+.basicTbl .left{text-align:left;padding-left:9px;padding-right:9px}
+.basicTbl .tooltip{margin-top:-2px}
+.basicTbl.type2 tbody th{padding-left:16px;background:#f6f6f6}
+.consultingWrap .gradeWrap{position:relative;margin:30px 0 24px;border-bottom:1px solid #dadde0}
+.consultingWrap .gradeWrap .gradeBox{position:relative;width:34%;text-align:center}
+.consultingWrap .gradeWrap .gradeBox .title{position:absolute;top:100%;left:0;right:0;margin-top:5px;font-size:16px;text-align:center}
+.consultingWrap .gradeWrap .gradeBox .desc{margin-bottom:4px;font-weight:bold}
+.consultingWrap .gradeWrap .gradeBox .desc .fontNum{font-size:16px;font-weight:700}
+.consultingWrap .gradeWrap .grade1{float:left}
+.consultingWrap .gradeWrap .grade2{float:right}
+.consultingWrap .gradeWrap .gaugeBar{position:relative;margin:0 auto;width:57px;height:158px;background-color:#f0f2f5;border-top-left-radius:14px;border-top-right-radius:14px}
+.consultingWrap .gradeWrap .gaugeBar .bar{position:absolute;bottom:0;left:0;width:100%}
+.consultingWrap .gradeWrap .gaugeBar .bar.is-animated{-webkit-animation:gaugeBar 1.5s .1s cubic-bezier(0.645,0.045,0.355,1.000);animation:gaugeBar 1.5s .1s cubic-bezier(0.645,0.045,0.355,1.000)}
+@-webkit-keyframes gaugeBar{
+  0%{height:0}
+}
+@keyframes gaugeBar{
+  0%{height:0}
+}
+.consultingWrap .gradeWrap .grade1 .gaugeBar .bar{background-color:#2e81f8}
+.consultingWrap .gradeWrap .grade2 .gaugeBar .bar{background-color:#2e81f8}
+.consultingWrap .gradeWrap .pointBox{position:absolute;top:50px;left:50%;margin-left:-40px;color:#000;text-align:center;font-size:16px}
+.consultingWrap .gradeWrap .pointBox .percent{padding:0 19px 0px 4px;font-weight:bold;font-size:22px;font-style:italic;line-height:1;background:url('../../../../img/bam/ssc/cp/bg_percent_arrow.png') no-repeat 0 100%;background-size:auto 27px}
+.consultingWrap .gradeWrap .pointBox .percent .fontNum{font-weight:800;font-size:50px;color:#0b0d0f}
+.consultingWrap .blitListWrap{padding:20px 0 25px;}
+.consultingWrap .anysChart{margin:0 -20px;padding-bottom:0}
+
+.consultingWrap .simBoxTop{margin-bottom:20px;color:#2b2e38;font-weight:bold;font-size:16px}
+.consultingWrap .simBoxTop .label{margin:-2px 2px 0 0;display:inline-block;vertical-align:middle;padding:0 10px;height:26px;line-height:26px;border-radius:14px;color:#fff;font-size:13px;background:#2b2e38}
+.consultingWrap .simListConTop .head{display:table;table-layout:fixed;width:100%;border-top:1px solid #dadde0;border-bottom:1px solid #dadde0}
+.consultingWrap .simListConTop .head li{position:relative;display:table-cell;padding:10px 2px;vertical-align:middle;border-left:1px solid #dadde0;font-size:16px}
+.consultingWrap .simListConTop .head li:nth-child(1){width:12%;text-align:left;border-left:0;font-weight:bold;text-align:center;color:#2e81f8}
+.consultingWrap .simListConTop .head li:nth-child(2){text-align:left;padding-left:13px}
+.consultingWrap .simListConTop .head li.button{padding:0;width:42px;text-align:center;background:#f7f8fa}
+.consultingWrap .simListConTop .head li.button [class*='btn']{display:inline-block;vertical-align:middle;width:42px;height:42px;line-height:42px;white-space:nowrap;}
+.consultingWrap .simListConTop .head .btnEdit{color:#2e81f8}
+.consultingWrap .simListConTop .head .btnSubmit{color:#2e81f8}
+.consultingWrap .simListConTop .head .btnDel{color:#575b63}
+.consultingWrap .simListConTop .head .btnCancel{color:#575b63}
+.consultingWrap .simListConTop .head li.paddingNarrow{padding-top:6px;padding-bottom:5px}
+.consultingWrap .simListConTop .head li .fontNum{font-size:16px}
+.consultingWrap .simListCon{text-align:center}
+.consultingWrap .simListConTop.empty{border-top:1px solid #dadde0;border-bottom:1px solid #dadde0;padding:17px 0}
+.consultingWrap .simListConTop.empty .empty{position:relative;display:inline-block;padding-left:28px;text-align:center;color:#9b9fa8;font-size:16px}
+.consultingWrap .simListConTop.empty .empty:before{position:absolute;top:50%;left:0;display:block;content:'';width:21px;height:21px;margin:-10px 0 0;background:url('../../../../img/bam/ssc/cp/bg_empty.png') no-repeat 0 0;background-size:100% 100%}
+.consultingWrap .simList li{margin-top:5px}
+.consultingWrap .simList li:first-child{margin-top:0}
+.simListConMid .simListTbl{table-layout:fixed;width:100%;margin:15px 0}
+.simListConMid .simListTbl th,
+.simListConMid .simListTbl td{padding:3px 0;word-wrap:break-word;word-break:break-all;font-size:16px}
+.simListConMid .simListTbl th{text-align:left;font-weight:400;color:#575b63}
+.simListConMid .simListTbl td{text-align:right;font-weight:700}
+.simListConMid .simListTbl td.paddingNarrow{padding:6px 0}
+.simListConMid .simListTbl .fontNum{font-weight:800}
+.simBoxCon .simInput{padding:0 7px;height:28px;line-height:26px;border-color:#d5d5d5;font-size:16px;margin-right:3px;width:100px;color:#aaa}
+.simBoxCon .simInput::-webkit-input-placeholder{color:#c1bfbf;font-size:16px}
+.simBoxCon .simInput::placeholder{color:#c1bfbf;font-size:16px}
+.simBoxCon .simInput.type1{width:135px}
+.simBoxCon .simInput.type2{width:100px;font-weight:700}
+.simBoxCon .simSel{padding-left:9px;height:28px;line-height:26px;border-color:#d5d5d5;font-size:16px;margin-right:2px;width:109px;font-weight:bold;color:#000;background-image:url('../../../../img/bam/ssc/cp/bg_sim_sel.png');background-size:auto 6px;background-position:93%}
+.simBoxCon .conTitH3{font-size:18px}
+.simBoxCon .conTitH3:first-child{margin-top:24px}
+
+/*시뮬레이터 팝업*/
+.layerPopWrap{display:none;position:fixed;top:50%;left:20px;right:20px;z-index:1000}
+.layerPopupDimm{position:fixed;z-index:999;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5)}
+.layerPopWrap .popWrap{background:#fff}
+.layerPopWrap .popTop{position:relative;padding:20px 0 8px;margin:0 15px;background:#fff;border-bottom:1px solid #d5d5d5}
+.layerPopWrap .popTop h1{font-size:18px;text-align:left;color:#000 !important}
+.layerPopWrap .popTop .btnClose{position:absolute;right:0;top:50%;width:14px;height:14px;margin-top:-5px;line-height:1;background:url('../../../../img/bam/ssc/cp/btn_layer_close.png') no-repeat 0 0;background-size:100% 100%}
+.layerPopWrap .popCon{padding:23px 15px 10px;border:0}
+.layerPopWrap .popCon .simulatorAgreePopList li{color:#575b63;word-break:keep-all;text-indent:-13px;padding-left:13px;font-size:13px}
+.layerPopWrap .popCon .simulatorAgreePopList li .fontNum{color:#2b2e38}
+.layerPopWrap .btnAgreeChkWrap{position:relative;margin-top:20px}
+.layerPopWrap .btnAgreeChkWrap input[type="checkbox"]{width:27px;height:27px;position:absolute;top:0;left:-9999px;cursor:pointer;background:none}
+.layerPopWrap .btnAgreeChkWrap input[type="checkbox"] + label{display:inline-block;padding-left:32px;line-height:27px;font-size:16px;font-weight:bold;margin:0;cursor:pointer;color:#000;background:url("../../../../img/bam/ssc/cp/ico_check.png") no-repeat left top;background-size:27px}
+.layerPopWrap .btnAgreeChkWrap input[type="checkbox"]:checked + label{background-image:url("../../../../img/bam/ssc/cp/ico_check_on.png")}
+.layerPopWrap .btnWrap .btnResult{padding:23px 0;font-size:18px}
+.layerPopWrap .popCon .simulatorAgreePopList li{margin-top:8px}
+.layerPopWrap .popCon .simulatorAgreePopList li:first-child{margin-top:0}
+
+@media all and (max-height:500px){
+    .layerPopWrap .popCon .simulatorAgreePopList li{margin-top:0}
+}
+
+
+
+/* 삭제 팝업 */
+.layerPopWrap02{display:none;position:fixed;top:50%;left:20px;right:20px;z-index:1000}
+.layerPopWrap02 .popWrap{background:#fff}
+.layerPopWrap02 .popCon{padding:30px 15px;border:0;text-align:center}
+.layerPopWrap02 .popCon .msg{font-size:16px;color:#2b2e38}
+.layerPopWrap02 .btnWrap{margin:0}
+.layerPopWrap02 .btnWrap .btnList{margin-left:0}
+.layerPopWrap02 .btnWrap .btnList > li{width:50%;margin-left:0}
+.layerPopWrap02 .btnWrap .btnList > li a{border-radius:0;font-size:18px}
+
+
+
+
+
+
+/***************************************************************************** 신용평점분석 *****************************************************************************/
+
+/* 현황 */
+.crdGaugeArea{}
+.crdGaugeArea .gaugeWrap{position:relative;width:156px;height:156px;margin:35px auto 0;}
+.crdGaugeArea .gaugeWrap .gaugeUnit{position:absolute;bottom:100%;left:50%;transform:translate(-50%,0);color:#bec2c7;font-size:14px;}
+.crdGaugeArea .gaugeWrap .gaugeCont{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:120px;text-align:center;line-height:1.0}
+.crdGaugeArea .gaugeWrap .gaugeScore{margin-bottom:5px;font-size:22px;font-weight:400}
+.crdGaugeArea .gaugeWrap .gaugeScore .fontNum{display:inline-block;padding-right:2px;font-size:47px;font-weight:800;vertical-align:-1px;letter-spacing:-1px}
+.crdGaugeArea .gaugeWrap .gaugeTxt{color:#9b9fa8;font-size:15px;}
+.crdGaugeArea .gaugeWrap .gaugeChartBg{stroke:#eff1f5;stroke-width:2px}
+.crdGaugeArea .gaugeWrap .gaugeChartSeg{transform-origin:0 0;stroke:#2d81f8;stroke-width:4px;stroke-linecap:round;will-change:auto;transition:stroke-dashoffset 1.5s ease-in-out}
+
+.crdRankArea .rankWrap{margin:20px 0 0;padding:40px 0 0;text-align:center;background:url('../../../../img/bam/ssc/cp/icon_rank.png') no-repeat center top;background-size:23px auto}
+.crdRankArea .rankWrap .rank {line-height:32px;font-size:22px;color:#2b2e38}
+.crdRankArea .rankWrap .rank .fontNum{font-size:47px;font-weight:800}
+.crdRankArea .rankWrap .tot{font-size:15px;color:#bec2c7}
+.rankGaugeWrap{margin:0 auto;width:272px;}
+.rankGaugeWrap .rankGauge{position:relative;padding:10px 0 0;height:82px;border-bottom:1px solid #dadde0;}
+.rankGaugeWrap .rankGauge svg{width:100%;height:100%;background:url('../../../../img/bam/ssc/cp/bg_rankgauge.png') no-repeat 100% 0;background-size:auto 100%;}
+.rankGaugeWrap .rankGauge .line{stroke:#00b9ad;stroke-width:2px;filter:url('#lineShadow');}
+.rankGaugeWrap .rankGauge .rankGaugeState{position: absolute;bottom:-6px;left:-5px;width:10px;height:10px;background:#fff;box-sizing:border-box;border:2px solid #00b9ad;border-radius:100%;box-shadow:1px 1px 3px rgba(0,0,0,0.15)}
+.rankGaugeWrap .rankGauge[data-state='null'] svg{background-image:url('../../../../img/bam/ssc/cp/bg_rankgauge_null.png')}
+.rankGaugeWrap .rankGauge[data-state='null'] .line{stroke:#dadde0;}
+.rankGaugeWrap .rankGauge[data-state='null'] .rankGaugeState{border-color:#e9eaec;}
+.rankGaugeWrap .rankGauge .rankGaugeState .icoLine{display:block;position:absolute;top:7px;left:3px;height:0;border-left:1px dotted #7adbd5;}
+.rankGaugeWrap.is-animated .rankGaugeState,
+.rankGaugeWrap.is-animated .rankGaugeState .icoLine{transition:all 2s ease-in-out;}
+.rankGaugeWrap .rankTxt{margin:5px 0 0;}
+.rankGaugeWrap .rankTxt:after{display:block;content:'';clear:both;}
+.rankGaugeWrap .rankBottom{color:#bec2c7;font-size:13px;}
+.rankGaugeWrap .rankBottom.low{float:left;}
+.rankGaugeWrap .rankBottom.high{float:right;}
+.rankGaugeWrap .rankBottom .fontNum{font-size:15px;}
+
+/* 신용상태(슬라이드) */
+
+.crdStateArea{overflow:hidden}
+.crdStateArea .slick-list{overflow:visible}
+.crdStateArea .crdStateSlider{padding-top:30px}
+.crdStateArea .crdStateSlider .slick-slide{width:249px !important;height:100px;margin-right:13px;border:1px solid #dadde0;border-radius:5px;box-sizing:border-box;outline:none}
+.crdStateArea .stateBx{position:relative;height:100px}
+.crdStateArea .stateBx .state{position:relative;width:100%;height:100%}
+.crdStateArea .stateBx .state:before{display:block;content:"";width:86px;height:65px;position:absolute;left:10px;top:20px;background:url('../../../../img/bam/ssc/cp/icon_state_1.png') 0 0 no-repeat;background-size:auto 65px}
+.crdStateArea .stateBx .state[data-state="1"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_1_off.png')}
+.crdStateArea .stateBx .state[data-state="2"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_2_off.png')}
+.crdStateArea .stateBx .state[data-state="3"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_3_off.png')}
+.crdStateArea .stateBx .state[data-state="4"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_4_off.png')}
+.crdStateArea .stateBx .state[data-state="5"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_5_off.png')}
+.crdStateArea .stateBx .state[data-state="null"]{background-image:url('../../../../img/bam/ssc/cp/icon_state_null.png')}
+.crdStateArea .stateBx .balloon{position:relative;right:-90px;top:-25px;width:182px;padding:9px 15px;box-sizing:border-box;background:#2e81f8;text-align:left;border-radius:5px}
+.crdStateArea .stateBx .balloon .balloonTxt{font-size:16px;color:#fff}
+.crdStateArea .stateBx .balloon .balloonTxt strong{border-bottom:1px solid #ffffff}
+.crdStateArea .stateBx .balloon:before{display:block;content:"";position:absolute;left:-10px;bottom:10px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:7px solid transparent;border-bottom:7px solid #2e81f8;transform:rotate(-95deg)}
+.crdStateArea .stateBx .icoState{display:block;margin:0 auto 6px;width:86px;height:60px;background-repeat:no-repeat;background-position:center top;background-size:auto 60px;}
+.crdStateArea .stateBx .txt{position:absolute;right:20px;bottom:20px;text-align:right;font-size:18px;line-height:26px;color:#9b9fa8;background:url('../../../../img/bam/ssc/cp/bg_bar_null.png') 0 bottom repeat-x;background-size:auto 8px}
+.crdStateArea .crdStateSlider .slick-current{border:1px solid #c0d9fd}
+.crdStateArea .crdStateSlider .slick-current .stateBx .txt{color:#2b2e38;background-image:url('../../../../img/bam/ssc/cp/bg_bar2.png')}
+.crdStateArea .crdStateSlider .slick-current .stateBx .state[data-state="1"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_1.png')}
+.crdStateArea .crdStateSlider .slick-current .stateBx .state[data-state="2"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_2.png')}
+.crdStateArea .crdStateSlider .slick-current .stateBx .state[data-state="3"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_3.png')}
+.crdStateArea .crdStateSlider .slick-current .stateBx .state[data-state="4"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_4.png')}
+.crdStateArea .crdStateSlider .slick-current .stateBx .state[data-state="5"]:before{background-image:url('../../../../img/bam/ssc/cp/icon_state_5.png')}
+.crdStateArea .crdStateSlider .slick-current .stateBx .state[data-state="null"]{background-image:url('../../../../img/bam/ssc/cp/icon_state_null.png')}
+.crdStateArea .crdStateSlider .slick-current .stateBx .state::before{animation:crdState 2s ease-out forwards;}
+@keyframes crdState{ 100%{transform:rotateY(720deg)} }
+
+.crdRatioArea .titWrap{margin-bottom:20px;}
+.graphBarWrap{padding:2px 0 30px;}
+.graphBar{position:relative;width:100%;height:10px;margin:37px 0 17px;background:#f0f0f0;border-radius:5px}
+.graphBar .bar{z-index:2;position:absolute;top:0;left:0;width:0;height:100%;border-radius:5px;box-shadow:1px 1px 3px rgba(0,0,0,0.2);background:#2e81f8;transition:all 2s ease}
+.graphBarWrap .bar[data-score="1000"] .score{left:-22px}
+.graphBar .scoreBox{z-index:2;position:absolute;bottom:100%;left:0;right:-25px;text-align:right;margin:0 0 16px;font-weight:400;color:#161616;}
+.graphBar .scoreBox .score{position:relative;display:inline-block;;padding:2px 0;min-width:60px;font-size:15px;text-align:center;color:#fff;background:#2e81f8;border-radius:7px}
+.graphBar .scoreBox .score:after{display:block;content:"";position:absolute;left:50%;bottom:-16px;margin-left:-5px;border-top:8px solid #2e81f8;border-bottom:8px solid transparent;border-left:5px solid transparent;border-right:5px solid transparent}
+.graphBar .scoreBox .score .per{font-size:13px;font-weight:400;vertical-align:-2px;color:#fff}
+.graphBar .scoreBox .score .txt{font-size:15px;font-weight:400;vertical-align:-1px;color:#fff}
+.graphBarWrap.type2 .scoreBox{right:-27px}
+.graphBarWrap.type2 .scoreBox .score{min-width:66px}
+.graphBarWrap .list li{margin-bottom:33px}
+.graphBarWrap .list li:last-child{margin-bottom:0}
+.graphBarWrap .list li:nth-child(2) .graphBar .bar{background:#8977f7}
+.graphBarWrap .list li:nth-child(2) .graphBar .scoreBox .score{background:#8977f7}
+.graphBarWrap .list li:nth-child(2) .graphBar .scoreBox .score:after{border-top:8px solid #8977f7}
+.graphBarWrap .list li:last-child .graphBar .bar{background:#24ccd5}
+.graphBarWrap .list li:last-child .graphBar .scoreBox .score{background:#24ccd5}
+.graphBarWrap .list li:last-child .graphBar .scoreBox .score:after{border-top:8px solid #24ccd5}
+.graphBar .scoreBox .score .fontNum{font-size:18px;color:#fff;vertical-align:top;font-weight:800;}
+.graphBar .barTxt{position:absolute;top:100%;left:0;right:0;margin-top:8px}
+.graphBar .barTxt:after{display:block;content:'';clear:both;}
+.graphBar .barBottom{font-size:15px;color:#9b9fa8;}
+.graphBar .barBottom.low{float:left;}
+.graphBar .barBottom.high{float:right;}
+
+.graphBarWrap.between{padding:15px 0 25px;}
+.graphBarWrap.between .graphBar{height:5px;margin-bottom:36px;background:#f0f2f5;}
+.graphBarWrap.between .graphBar .bar{transition:none;background:transparent;box-shadow:none;}
+.graphBarWrap.between .graphBar .bar:after{position:absolute;top:-3px;right:0;content:'';display:block;width:11px;height:11px;border-radius:10px;box-shadow:1px 1px 3px rgba(0,0,0,0.15);background:#2e81f8;}
+.graphBarWrap.between .graphBar .bar.high:after{background:#2e81f8;}
+.graphBarWrap.between .graphBar .bar.low:after{background:#25c343;}
+.graphBarWrap.between .graphBar .bar.low .scoreBox{bottom:auto;top:100%;margin:20px 0 0;}
+.graphBarWrap.between .graphBar .bar.low .scoreBox .score{background:#25c343}
+.graphBarWrap.between .graphBar .bar.low .scoreBox .score:after{bottom:auto;top:-16px;border-bottom:8px solid #25c343;border-top:8px solid transparent;border-left:5px solid transparent;border-right:5px solid transparent}
+.graphBarWrap.between .betweenLine{z-index:1;position:absolute;top:0;left:0;width:0;height:100%;margin-left:-5px;box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+  background: rgb(37,195,67);
+  background: -moz-linear-gradient(90deg, rgba(37,195,67,1) 0%, rgba(46,129,248,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(37,195,67,1) 0%, rgba(46,129,248,1) 100%);
+  background: linear-gradient(90deg, rgba(37,195,67,1) 0%, rgba(46,129,248,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#25c343",endColorstr="#2e81f8",GradientType=1);
+}
+
+
+/* 크레딧 리포트 */
+.crdInfoWrap{padding:0 20px}
+.CrdDateCont{border:1px solid #ccc;border-bottom:none;border-right:none}
+.CrdDateCont ul:after{display:block;content:"";clear:both}
+.CrdDateCont ul li{float:left;display:table;width:100%;border-right:1px solid #ccc;border-bottom:1px solid #ccc;box-sizing:border-box;text-align:center}
+.CrdDateCont ul.grid3 li{width:33.33%}
+.CrdDateCont ul li a {display:table-cell;height:70px;;vertical-align:middle}
+.CrdDateCont ul li a > *{display:block;vertical-align: middle}
+
+
+[class^="guideTxt"]{padding:35px 16px 33px;background:#f7f8fa}
+.guideTxt .title{margin-bottom:10px;font-size:15px;color:#2b2e38}
+.guideTxt p{line-height:18px;color:#575b63}
+
+.guideTxt02{margin:0 16px;padding:33px 0 30px;background:none;border-bottom:1px solid #e1e4e6}
+.guideTxt02 p{font-size:25px;line-height:33px}
+.guideTxt02 p .fontNum{font-weight:800;color:#2e81f8}
+
+
+
+/* 비교분석 */
+.crdAgeArea{padding-top:22px;}
+.crdAgeArea .graphBarWrap li + li .tit{padding-top:10px;}
+.crdAgeArea .graphBarWrap .tit{padding-bottom:7px;font-weight:700;color:#0b0d0f;font-size:16px;}
+.crdAgeArea .blitListWrap{padding:10px 0 0}
+
+.crdCsArea{padding-bottom:0}
+.crdCsArea .blitListWrap{padding:0 0 14px}
+.crdCsArea .blitListWrap li{display:none}
+.crdCsArea .blitListWrap li:nth-child(-n+3){display:block}
+
+.crdGuideArea {padding-bottom:0;margin-bottom:30px}
+.crdGuideArea .blitListWrap{padding:0 0 14px}
+.crdGuideArea .blitListWrap li{display:none}
+.crdGuideArea .blitListWrap li:nth-child(-n+2){display:block}
+
+.crdAgeHistory{padding-bottom:20px}
+.crdAgeHistory .titWrap{margin-bottom:30px}
+
+.crdAgeHistory2 .infoTxt{margin:15px 0 30px}
+.crdAgeHistory2 .infoTxt p{text-align:center;line-height:22px;font-size:15px;color:#575b63}
+.crdAgeHistory2 .infoTxt p .fontNum{color:#2b2e38}
+.crdAgeHistory2 .infoTxt p .fontNum.type2{color:#2e81f8}
+
+.graphHistory{margin:45px 0 0}
+.graphHistory .historyList li{display:table;width:100%;padding:22px 18px 11px 17px;table-layout:fixed;border-bottom:1px solid #f0f2f5}
+.graphHistory .historyList li:last-child{border-bottom:none}
+.graphHistory .historyList li .month{display:table-cell;text-align:left;font-family:'Roboto';font-size:14px;color:#575b63;vertical-align:top}
+.graphHistory .historyList li .scoreWrap{display:table-cell;text-align:right;font-family:'Roboto';font-size:14px;font-weight:800;color:#2b2e38}
+.graphHistory .historyList li .scoreWrap:after{display:block;content:"";clear:both}
+.graphHistory .historyList li .scoreWrap .chg{position:relative;float:right;padding-left:14px;font-family:'Roboto';font-size:15px}
+.graphHistory .historyList li .scoreWrap .chg:before{display:block;content:"";width:9px;height:6px;position:absolute;left:0;top:50%;margin:-4px 0 0}
+.graphHistory .historyList li .scoreWrap .chg.up:before{background:url('../../../../img/bam/ssc/cp/ico_up.png') no-repeat center center;background-size:9px auto}
+.graphHistory .historyList li .scoreWrap .chg.down:before{background:url('../../../../img/bam/ssc/cp/ico_down.png') no-repeat center center;background-size:9px auto}
+.graphHistory .historyList li .scoreWrap .chg.none{display:inline-block;min-width:27px;color:#9b9fa8;text-align:center}
+.graphHistory .historyList li .scoreWrap .chg.up{color:#dc320a}
+.graphHistory .historyList li .scoreWrap .chg.down{color:#2e81f8}
+.graphHistory .historyList li .scoreWrap .score{float:left;width:calc(65%  - 6%);text-align:right;font-size:15px}
+.graphHistory .historyList li .scoreWrap .score .fontNum{font-size:15px}
+
+
+/*  신용 변동 내역 */
+.crdHistoryWrap .monthTitWrap{margin-bottom:30px}
+.crdHistoryWrap .monthTitWrap .title{font-size:25px}
+.crdHistoryWrap .monthTitWrap .title .total{font-weight:800;color:#2e81f8}
+.crdHistoryWrap .monthTitWrap .title .total .fontNum{font-size:27px;color:#2e81f8}
+.crdHistoryWrap .hisDataCnt .cntList li{float:left;width:25%}
+.crdHistoryWrap .hisDataCnt.type2 .cntList li{width:33.33%;margin-right:0;margin-bottom:20px}
+.crdHistoryWrap .hisDataCnt.type2 .cntList li:nth-child(2){width:66%}
+.crdHistoryWrap .hisDataCnt .cntList li > *{display:block}
+.crdHistoryWrap .hisDataCnt .cntList li .tit{font-size:14px;color:#575b63}
+.crdHistoryWrap .hisDataCnt .cntList li .tit .subTxt{display:block;font-size:13px;color:#575b63}
+.crdHistoryWrap .hisDataCnt .cntList li .cont{font-size:25px;font-weight:800}
+.crdHistoryWrap .hisDataCnt .cntList li .cont .fontNum{font-size:28px;font-weight:800}
+.crdHistoryWrap .hisDataCnt .cntList:after{display:block;content:"";clear:both}
+
+/* 나의금융현황 내역 */
+.bxTotalWrap{padding:0 24px;margin-bottom:33px}
+.bxTotalWrap.type2 .titWrap{border-bottom:none}
+.bxTotalWrap .titWrap{position:relative;padding-bottom:20px;margin-bottom:0}
+.bxTotalWrap .titWrap .tooltip{float:right}
+.bxTotalWrap .titWrap:after{display:block;content:"";clear:both}
+.bxTotalWrap .totalWrap{padding:16px 0;;border-top:1px solid #e1e4e6;border-bottom:1px solid #e1e4e6}
+.bxTotalWrap .totalWrap.type2{border-bottom:none}
+.bxTotalWrap .totalWrap .totalTit{margin-bottom:4px;font-size:16px;font-weight:700;color:#2b2e38}
+.bxTotalWrap .totalWrap .totalDetail li{display:table;width:100%;table-layout:fixed;line-height:23px}
+.bxTotalWrap .totalWrap .totalDetail .tit{display:table-cell;text-align:left;word-break:break-all;font-size:15px;color:#2e81f8}
+.bxTotalWrap .totalWrap .totalDetail .cont{display:table-cell;text-align:right;font-size:15px;color:#2e81f8}
+.bxTotalWrap .totalWrap .totalDetail .cont.date{color:#000;font-family:'Roboto';font-size:15px}
+.bxTotalWrap .totalWrap .totalDetail .cont .fontNum{color:#2e81f8;font-weight:600;font-size:15px}
+.bxTotalWrap .infoList{padding:15px 0}
+.bxTotalWrap .infoList li{display:table;width:100%;table-layout:fixed;margin-bottom:5px}
+.bxTotalWrap .infoList li:last-child{border-bottom:none;margin-bottom:0}
+.bxTotalWrap .infoList li .tit{display:table-cell;text-align:left;word-break:break-all;font-size:15px;color:#575b63}
+.bxTotalWrap .infoList li .cont{display:table-cell;text-align:right;font-size:15px;color:#000}
+.bxTotalWrap .infoList li .cont .fontNum{font-weight:600;font-size:15px}
+.bxTotalWrap .dataNone{text-align:center;border-top:1px solid #e1e4e6;border-bottom:1px solid #e1e4e6}
+.bxTotalWrap .dataNone p{position:relative;display:inline-block;padding:15px 0;padding-left:28px;font-size:16px;color:#9b9fa8}
+.bxTotalWrap .dataNone p:before{display:block;content:"";width:21px;height:21px;position:absolute;left:0;top:50%;margin:-10px 0 0;background:url('../../../../img/bam/ssc/cp/bg_empty.png') no-repeat center center;background-size:21px auto}
+
+/* 이용안내 */
+.noticeWrap{padding:22px 24px 15px;margin-bottom:50px;background:#f7f8fa}
+.noticeWrap .noticeTit{margin-bottom:0;color:#000;font-size:15px}
+.noticeWrap .list{padding:20px 0;}
+.noticeWrap .list li{position:relative;padding-left:8px;margin-bottom:15px;font-size:15px;line-height:20px;color:#575b63}
+.noticeWrap .list li:last-child{margin-bottom:0}
+.noticeWrap .list li:before{display:block;content:"";width:3px;height:3px;position:absolute;left:0;top:7px;background:#575b63;border-radius:100%}
+.noticeWrap.type2 {padding:22px 24px 0}
+.noticeWrap.type2 .list{padding:20px 0 10px}
+.noticeWrap.type2 .list li{display:none}
+.noticeWrap.type2 .list li:first-child{display:block}
+.noticeWrap.type2 .list li:last-child{margin-bottom:20px}
+
+/* 나의 금융 현황 */
+.potenArea{position:relative}
+.potenArea:before{z-index:-1;position:absolute;top:0;left:0;display:block;content:'';width:100%;height:163px;background-color:#fff}
+.potenArea .cardPoten{position:relative;border-radius:7px;width:285px;height:180px;margin:25px auto 35px;box-shadow:0 3px 10px 0 rgba(0,0,0,0.2);background:#fff;text-align:left}
+.potenArea .cardPoten .bgGauge{position:absolute;left:0;right:0;bottom:0;border-radius:0 0 7px 7px;background:url('../../../../img/bam/ssc/cp/bg_gauge.png') no-repeat 0 bottom;background-size:285px 180px}
+.potenArea .cardPoten .bgGauge.is-animated{-webkit-animation:gaugeBar 1.5s .1s cubic-bezier(0.645,0.045,0.355,1.000);animation:gaugeBar 1.5s .1s cubic-bezier(0.645,0.045,0.355,1.000)}
+.potenArea .cardPoten .txtBox{position:absolute;left:20px;bottom:20px}
+.potenArea .cardPoten .percent{margin-bottom:3px;color:#0b0d0f;font-size:24px;line-height:1}
+.potenArea .cardPoten .percent .fontNum{font-size:45px;font-weight:900}
+.potenArea .cardPoten .infoBox .point{font-size:20px;color:#0b0d0f}
+.potenArea .cardPoten .gaugeBar{position:absolute;top:10px;right:10px;bottom:7px;width:4px;background:#f6f6f6}
+.potenArea .cardPoten .gaugeBar:before,
+.potenArea .cardPoten .gaugeBar:after{display:block;z-index:1;position:absolute;font-size:19px}
+.potenArea .cardPoten .gaugeBar:before{content:'100';color:#bec2c7;top:-4px;left:-38px}
+.potenArea .cardPoten .gaugeBar:after{content:'0';color:#bec2c7;bottom:1px;left:-17px}
+.potenArea .cardPoten .icoCard{display:inline-block;position:absolute;top:40px;left:20px;width:32px;height:25px;background:url('../../../../img/bam/ssc/cp/ico_card.png') no-repeat 0 0;background-size:32px auto}
+.potenArea .potenBox{margin-top:23px;padding:18px 24px;margin:0 -24px;background:#f7f8fa}
+.potenArea .potenBox li{margin-top:20px;color:#666666;font-size:16px;line-height:25px;word-break:keep-all}
+.potenArea .potenBox li:first-child{margin-top:0}
+.potenArea .potenBox li strong{color:#0b0d0f}
+
+/***************************************************************************** 신용 QA *****************************************************************************/
+.faqWrap{padding:34px 24px}
+.faqTalkLst:after{content:'';display:block;height:0;clear:both}
+.faqTalkLst.slick-slider{position:relative;padding-top:40px}
+.faqTalkLst .faqTalkBx{outline:none}
+.faqTalkLst .faqTalkBx > *{position:relative;min-height:80px;padding:25px 0 15px}
+.faqTalkLst .faqTalkBx > .faqQ{float:left;width:calc(100% - 40px);padding-left:38px}
+.faqTalkLst .faqTalkBx > .faqA{float:right;width:calc(100% - 40px);padding-right:38px}
+.faqTalkLst .faqTalkBx > *:before,
+.faqTalkLst .faqTalkBx > *:after{content:'';display:block;position:absolute;top:0;color:#9b9fa8;font-size:15px}
+.faqTalkLst .faqTalkBx > .faqQ:before{left:0;width:36px;height:36px;background:url('../../../../img/bam/ssc/cp/icon_faq_question.png') left top no-repeat;background-size:100%}
+.faqTalkLst .faqTalkBx > .faqQ:after{content:'궁그미';left:54px}
+.faqTalkLst .faqTalkBx > .faqA:before{right:0;width:36px;height:36px;background:url('../../../../img/bam/ssc/cp/icon_faq_answer.png') left top no-repeat;background-size:100%}
+.faqTalkLst .faqTalkBx > .faqA:after{content:'신용관리자';right:54px}
+.faqTalkLst .faqBalloon{position:relative;margin-top:4px;padding:14px 10px;border-radius:15px;font-size:15px;text-align:left;color:#575b63;word-break:keep-all;}
+.faqTalkLst .faqBalloon:first-child{margin-top:0}
+.faqTalkLst .faqBalloon:before{content:'';display:block;position:absolute;top:18px;width:6px;height:8px}
+.faqTalkLst .faqBalloon strong{color:#000}
+.faqTalkLst .faqBalloon .fontNum{font-size:15px}
+.faqTalkLst .faqTalkBx > .faqQ .faqBalloon{background-color:#f0f2f5}
+.faqTalkLst .faqTalkBx > .faqQ .faqBalloon:before{left:-6px;background:url('../../../../img/bam/ssc/cp/icon_faq_arrow1.png') left top no-repeat;background-size:100%}
+.faqTalkLst .faqTalkBx > .faqA .faqBalloon{background-color:#fff6ae;color:#000}
+.faqTalkLst .faqTalkBx > .faqA .faqBalloon:before{right:-6px;background:url('../../../../img/bam/ssc/cp/icon_faq_arrow2.png') left top no-repeat;background-size:100%}
+.faqComment{margin:20px 0 0;text-align:center}
+.faqComment .title{margin-bottom:25px;text-align:center;font-size:16px;color:#2b2e38}
+.faqComment p{font-size:15px;color:#575b63}
+.faqComment p strong{color:#000}
+.faqComment .cnt{text-decoration:underline}

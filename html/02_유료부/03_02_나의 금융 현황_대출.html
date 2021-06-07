@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<title>삼성카드 통합플랫폼TFT</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bzw/font.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/ui.css" />
+	<script type="text/javascript" src="../../resource/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/slick.min.js"></script>
+
+  <script src="../../resource/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bzm/jquery.ui.totop.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/waypoints.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/ycounter.v3.0.js"></script>
+
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/common.js"></script>
+
+
+
+</head>
+
+<body>
+	<div id="wrap">
+
+		<!-- s: header -->
+		<div id="header">
+			<div class="leftMenu">
+				<a href="#none" class="btnBack">이전</a>
+				<h1 class="title">나의 금융 현황</h1>
+			</div>
+			<div class="rightMenu">
+				<a href="#none" class="btnHome">홈</a>
+				<!-- <a href="#none" class="btnGnb">메뉴 열기<span></span></a>
+				<a href="#none" class="btnClose">메뉴 닫기</a> -->
+			</div>
+		</div>
+		<!-- e: header -->
+
+
+
+		<!-- s: gnb -->
+		<!-- <div id="gnb">
+			<div class="gnbWrap">
+				<div class="gnbDimm"></div>
+				<div class="gnbCont">
+					<ul class="gnbDepth1">
+						<li><a href="#none" class="btnGnbDepth1">신용 메인</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 평점 분석</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 변동내역</a></li>
+						<li><a href="#none" class="btnGnbDepth1 on">나의 금융 현황</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 컨설팅</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 Q&amp;A</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- s: 2depth -->
+			<div class="snbDepth2">
+				<ul class="snbLst2">
+					<li><a href="#void" class="btnDepth2">신용개설</a></li>
+					<li><a href="#void" class="btnDepth2 on">대출</a></li>
+					<li><a href="#void" class="btnDepth2">연체</a></li>
+				</ul>
+			</div>
+			<!-- e: 2depth -->
+		</div>
+		<!-- e: gnb -->
+
+		<!-- s: container -->
+		<div id="container">
+
+			<div class="crdHistoryWrap">
+
+				<!-- s: topCntWrap -->
+				<div class="topCntWrap pdType">
+					<div class="monthTitWrap">
+						<h3 class="title">총 <storng class="total"><em class="fontNum">999</em>건</storng>
+						</h3>
+					</div>
+					<!-- s:  hisDataCnt -->
+					<div class="hisDataCnt">
+						<ul class="cntList">
+							<li>
+								<span class="tit">대출거래</span>
+								<span class="cont">
+									<storng class="fontNum">1</storng>건
+								</span>
+							</li>
+							<li>
+								<span class="tit">대출상환</span>
+								<span class="cont">
+									<storng class="fontNum">1</storng>건
+								</span>
+							</li>
+							<li>
+								<span class="tit">단기카드</span>
+								<span class="cont">
+									<storng class="fontNum">1</storng>건
+								</span>
+							</li>
+							<li>
+								<span class="tit">보증</span>
+								<span class="cont">
+									<storng class="fontNum">1</storng>건
+								</span>
+							</li>
+						</ul>
+					</div>
+					<!-- e: hisDataCnt -->
+				</div>
+				<!-- e: topCntWrap -->
+
+				<!-- s: 대출거래 -->
+				<div class="bxTotalWrap pdType">
+					<div class="titWrap">
+						<h3 class="title">대출거래</h3>
+						<div class="tooltip">
+							<button type="button" class="btnTip">도움말</button>
+							<div class="content">
+								<ul class="txt">
+									<li>대출정보는 금융회사(대부업 제외)에서<br>종합신용정보집중기관에 등록한 고객님의 현재<br>개인대출정보에 대한 내역입니다.</li>
+									<li>개인대출정보는 금융회사의 여신에 등록되어 있는<br>보든 거래가 대상이며, 신용대출/담보대출/<br>모기지론/학자금/장기카드대출(카드론) 등을<br>포괄하는 정보입니다.</li>
+								</ul>
+								<a href="#void" class="btnTipClose">닫기</a>
+							</div>
+						</div>
+					</div>
+					<!-- s: 데이터가 있는 경우 -->
+					<ul class="totalList">
+						<li>
+							<div class="totalWrap">
+								<h3 class="totalTit"><span class="fontNum">1</span> 국민은행 본부총괄</h3>
+								<ul class="totalDetail">
+									<li>
+										<span class="tit">대출거래</span>
+										<span class="cont"><em class="fontNum">68,814</em> 천원</span>
+									</li>
+								</ul>
+							</div>
+							<ul class="infoList">
+								<li>
+									<span class="tit">개설일</span>
+									<span class="cont"><em class="fontNum">2020.04.09</em></span>
+								</li>
+								<li>
+									<span class="tit">변경일</span>
+									<span class="cont"><em class="fontNum">2020.04.09</em></span>
+								</li>
+								<li>
+									<span class="tit">주택담보 대출여부</span>
+									<span class="cont">없음</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- e: 데이터가 있는 경우 -->
+					<!-- s: 데이터가 없는 경우 -->
+					<div class="dataNone">
+						<p>대출정보가 없습니다.</p>
+					</div>
+					<!-- e: 데이터가 없는 경우 -->
+				</div>
+				<!-- e: 대출거래 -->
+				<!-- s: 대출상환 -->
+				<div class="bxTotalWrap pdType">
+					<div class="titWrap">
+						<h3 class="title">대출상환</h3>
+						<div class="tooltip">
+							<button type="button" class="btnTip">도움말</button>
+							<div class="content">
+								<ul class="txt">
+									<li>만기일시상환, 수신연동(마이너스 통장 등),<br>분할상환대출, 리볼빙 대출에 대한 대출상환정보를<br>제공합니다.</li>
+									<li>대출상환정보는 전월 1일부터 말일까지의 대출상환<br>실적을 기준의 정보로 표시됩니다.</li>
+									<li>본 정보는 해당 금융회사가 NICE평가정보에 등록한<br>실적을 기준으로 제공하고 있습니다. 실제로 이용실적이 있어도 금융회사에 등록하지 않은 경우에는 해당 정보가 표시되지 않습니다.</li>
+									<li>마이너스 대출은 상환금액이 입력되지 않습니다.</li>
+								</ul>
+								<a href="#void" class="btnTipClose">닫기</a>
+							</div>
+						</div>
+					</div>
+					<!-- s: 데이터가 있는 경우 -->
+					<ul class="totalList">
+						<li>
+							<div class="totalWrap">
+								<h3 class="totalTit"><span class="fontNum">1</span> 국민은행 본부총괄</h3>
+								<ul class="totalDetail">
+									<li>
+										<span class="tit">분할상환대출</span>
+										<span class="cont"><em class="fontNum">68,814</em> 천원 상환</span>
+									</li>
+								</ul>
+							</div>
+							<ul class="infoList">
+								<li>
+									<span class="tit">개설일</span>
+									<span class="cont"><em class="fontNum">2020.04.09</em></span>
+								</li>
+								<li>
+									<span class="tit">개설총액</span>
+									<span class="cont"><em class="fontNum">4,000</em> 천원</span>
+								</li>
+								<li>
+									<span class="tit">연체금액</span>
+									<span class="cont">- 천원</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- e: 데이터가 있는 경우 -->
+					<!-- s: 데이터가 없는 경우 -->
+					<div class="dataNone">
+						<p>대출상환정보가 없습니다.</p>
+					</div>
+					<!-- e: 데이터가 없는 경우 -->
+				</div>
+				<!-- e: 대출상환 -->
+				<!-- s: 단기카드대출(현금서비스) -->
+				<div class="bxTotalWrap pdType">
+					<div class="titWrap">
+						<h3 class="title">단기카드대출(현금서비스)</h3>
+						<div class="tooltip">
+							<button type="button" class="btnTip">도움말</button>
+							<div class="content">
+								<ul class="txt">
+									<li>현재 금융회사에 등록되어 있는 단기카드대출<br>(현금서비스) 정보에 대한 내용입니다.</li>
+									<li>단기카드대출(현금서비스) 정보는 각 금융회사의<br>신용카드 단기카드대출(현금서비스)을 받은 금액이<br>업체별 총합으로 표시됩니다.</li>
+								</ul>
+								<a href="#void" class="btnTipClose">닫기</a>
+							</div>
+						</div>
+					</div>
+					<!-- s: 데이터가 있는 경우 -->
+					<ul class="totalList">
+						<li>
+							<div class="totalWrap">
+								<h3 class="totalTit"><span class="fontNum">1</span> 국민은행 본부총괄</h3>
+								<ul class="totalDetail">
+									<li>
+										<span class="tit">단기카드대출금액</span>
+										<span class="cont"><em class="fontNum">68,814</em> 천원</span>
+									</li>
+								</ul>
+							</div>
+							<ul class="infoList">
+								<li>
+									<span class="tit">발생일</span>
+									<span class="cont"><em class="fontNum">2020.04.28</em></span>
+								</li>
+								<li>
+									<span class="tit">변경일</span>
+									<span class="cont"><em class="fontNum">2020.09.23</em></span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- e: 데이터가 있는 경우 -->
+					<!-- s: 데이터가 없는 경우 -->
+					<div class="dataNone">
+						<p>단기카드대출(현금서비스)이 없습니다.</p>
+					</div>
+					<!-- e: 데이터가 없는 경우 -->
+				</div>
+				<!-- e: 단기카드대출(현금서비스) -->
+				<!-- s: 보증 -->
+				<div class="bxTotalWrap pdType">
+					<div class="titWrap">
+						<h3 class="title">보증</h3>
+						<div class="tooltip">
+							<button type="button" class="btnTip">도움말</button>
+							<div class="content">
+								<ul class="txt">
+									<li>현재 금융회사에 등록되어 있는 채무보증 정보에<br>대한 내역입니다.</li>
+									<li>채무보증 정보는 각 금융기관과 제3자와의 거래에<br>대해 보증을 한 금액이 건 별로 표시됩니다.</li>
+								</ul>
+								<a href="#void" class="btnTipClose">닫기</a>
+							</div>
+						</div>
+					</div>
+					<!-- s: 데이터가 있는 경우 -->
+					<ul class="totalList">
+						<li>
+							<div class="totalWrap">
+								<h3 class="totalTit"><span class="fontNum">1</span> 산업은행 본부총괄</h3>
+								<ul class="totalDetail">
+									<li>
+										<span class="tit">보증금액</span>
+										<span class="cont"><em class="fontNum">68,814</em> 천원</span>
+									</li>
+								</ul>
+							</div>
+							<ul class="infoList">
+								<li>
+									<span class="tit">개설일</span>
+									<span class="cont"><em class="fontNum">2020.04.28</em></span>
+								</li>
+								<li>
+									<span class="tit">변경일</span>
+									<span class="cont"><em class="fontNum">2020.09.23</em></span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- e: 데이터가 있는 경우 -->
+					<!-- s: 데이터가 없는 경우 -->
+					<div class="dataNone">
+						<p>보증정보가 없습니다.</p>
+					</div>
+					<!-- e: 데이터가 없는 경우 -->
+				</div>
+				<!-- e: 보증 -->
+
+			</div>
+			<!-- e: crdHistoryWrap -->
+
+		</div>
+		<!-- e: container -->
+
+
+
+		<!-- s: footer -->
+		<div id="footer">
+			<div>
+				<!-- 공지사항 -->
+				<div class="ft-con ft-con1">
+					<div class="ft-inner">
+						<dl class="dl-notice clfix">
+							<dt class="tit"><span class="ico-notice"></span>공지사항</dt>
+							<dd>
+								<a href="#nolink" id="noticeOpenPop" data-noticeseq=""><span class="notice-subject"></span></a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- 신용정보사유 코드 조회 -->
+				<div class="ft-con ft-con2">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li class="last">
+								<span class="ft-input-wrap">
+									<input type="text" id="certi_code" name="certi_code" title="신용정보사유 코드조회" placeholder="신용정보사유 코드조회">
+									<button title="새창열림" class="btn-ft-search">검색하기</button>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 약관 영역 -->
+				<div class="ft-con ft-con3">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="03"><strong>개인정보취급방침</strong></a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="06"><strong>개인정보처리방침</strong></a>
+							</li>
+						</ul>
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="01">상품 이용약관</a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="02">웹서비스 이용약관</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ft-con  ft-con4">
+					<div class="ft-inner">
+						<address class="ft-addr">서울시 영등포구 국회대로74길 4(여의도동) NICE평가정보㈜</address>
+						<ul class="list-ft-info clfix">
+							<li>대표이사 신희부</li>
+							<li class="last">사업자등록번호 116-81-15020</li>
+						</ul>
+						<p class="txt-copyright">ⓒ NICE INFORMATION CO., LDT.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e: footer -->
+	</div>
+</body>
+
+</html>

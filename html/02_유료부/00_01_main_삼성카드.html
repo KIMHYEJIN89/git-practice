@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<title>삼성카드 통합플랫폼TFT</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bzw/font.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/ui.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/main.css" />
+	<script type="text/javascript" src="../../resource/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/slick.min.js"></script>
+
+  <script src="../../resource/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bzm/jquery.ui.totop.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/waypoints.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/ycounter.v3.0.js"></script>
+
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/common.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/main.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		var chartGradeValue= $('.gaugeChartWrap').data('grade');
+		var imgPtrn = $('#gaugePtrn image').attr('xlink:href');
+		var imgPtrnOrigin = imgPtrn.split('graph_con')[1];
+		var imgPtrnChange = chartGradeValue + '.png';
+		var imgPtrnSrc = $('#gaugePtrn image').attr('xlink:href').replace(imgPtrnOrigin, imgPtrnChange);
+		$('#gaugePtrn image').attr('xlink:href', imgPtrnSrc);
+
+
+		var chartNumValue= $('.gaugeChart').data('value');
+		gaugeChart(chartNumValue);
+		if( chartNumValue == 0){
+			$('#gaugePtrn').css('display', 'none');
+		}
+
+
+		function gaugeChart(data){
+			var gaugeBar = document.querySelectorAll('.gaugeBar');
+
+			Array.prototype.forEach.call(gaugeBar, function(path){
+					var length = path.getTotalLength()
+						, moveTo = length * ((100 + data)/100)
+						, pathSize 	 = path.getTotalLength();
+						//console.log('pathSize', pathSize);
+
+					if(data == 0) moveTo += 1;
+					path.getBoundingClientRect();
+					path.style.strokeDashoffset = Math.max(0, moveTo);
+					//console.log("path", path);
+
+					// state move
+					$({countNum: 0}).stop().animate({
+						countNum : data
+					},{
+						duration : 1400,
+						step     : function(){
+							var a = Math.floor(pathSize)
+								, b = (this.countNum*pathSize)/100
+								, c = path.getPointAtLength(b);
+								//console.log("x, y", Math.round(c.x) + ',' + Math.round(c.y) );
+
+							$('.gaugeState').css('transform','translate3d('+ -(Math.round(c.x)/2) + 'px, ' + Math.round(c.y)/2 + 'px, 0)');
+						},
+						complete : function() {
+						}
+					});
+
+			});
+
+		}
+
+	});
+</script>
+
+
+</head>
+
+<body>
+
+	<!-- <img src="../../01.무료_메인.png" alt="" style="position:absolute;top:-32px;left:0;width:360px;z-index:9999999;opacity:0.5"> -->
+	<!-- <img src="../../02.유료_메인.png" alt="" style="position:absolute;top:-32px;left:0;width:360px;z-index:9999999;opacity:0.5"> -->
+
+
+	<div id="wrap">
+
+		<!-- s: header -->
+		<div id="header">
+			<div class="leftMenu">
+				<a href="#none" class="btnBack">이전</a>
+				<h1 class="title">신용</h1>
+			</div>
+			<div class="rightMenu">
+				<a href="#none" class="btnHome">홈</a>
+			</div>
+		</div>
+		<!-- e: header -->
+
+		<!-- s: gnb -->
+		<!-- <div id="gnb">
+			<div class="gnbWrap">
+				<div class="gnbDimm"></div>
+				<div class="gnbCont">
+					<ul class="gnbDepth1">
+						<li><a href="#none" class="btnGnbDepth1 on">신용 메인</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 평점 분석</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 변동내역</a></li>
+						<li><a href="#none" class="btnGnbDepth1">나의 금융 현황</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 컨설팅</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 Q&amp;A</a></li>
+					</ul>
+				</div>
+			</div>
+		</div> -->
+		<!-- e: gnb -->
+
+		<!-- s: snb -->
+		<div id="snb">
+		</div>
+		<!-- e: snb -->
+
+
+
+		<!-- s: container -->
+		<div id="container">
+
+
+			<div class="mainWrap">
+				<!-- s: contents -->
+				<div class="mainContents">
+
+					<!-- s: main grade -->
+					<div class="mainBx mainGrade">
+						<h3 class="mainTit">신용평점</h3>
+
+						<!-- s: 차트영역 -->
+						<!-- ***** data-grade 값 : 매우우수 : 1 / 우수 : 2 / 보통 : 3 / 다소우려 : 4 / 우려 : 5 / 산출불가 : null -->
+						<div class="gaugeChartWrap" data-grade="1">
+							<div class="gaugeChartInfo">
+								<div class="inner">
+									<dl class="gaugeChartTxt">
+										<dt class="hidden">신용상태</dt>
+										<dd>매우우수</dd>
+									</dl>
+									<p class="gaugeChartNum">
+										<a href="#none" class="linkGuage">
+											<span class="fontNum">420</span><span class="txt">점</span>
+										</a>
+									</p>
+								</div>
+							</div>
+							<p class="guageChartPoint start"><span class="hidden">최저점수</span>0</p>
+							<p class="guageChartPoint end"><span class="hidden">최고점수</span>1,000</p>
+							<div class="gaugeState"></div>
+
+							<!-- s: 차트 -->
+							<!-- ***** 그래프 컨트롤 data-value 0 - 100 -->
+							<svg xmlns="http://www.w3.org/2000/svg" class="gaugeChart" width="195" height="112" viewBox="0 0 390 224" data-value="80">
+								<pattern id="gaugeBgPtrn" patternUnits="userSpaceOnUse" width="390" height="224">
+									<image xlink:href="../../resource/img/bam/ssc/cp/graph_bg.png" x="0" y="0" width="390" height="224"></image>
+								</pattern>
+								<pattern id="gaugePtrn" patternUnits="userSpaceOnUse" width="390" height="224">
+									<image xlink:href="../../resource/img/bam/ssc/cp/graph_con1.png" x="0" y="0" width="390" height="224"></image>
+								</pattern>
+								<path class="gaugeBg" stroke="#e9ebef" fill="none" d="M377.34,212.8c0.6-6.03,0.92-12.15,0.92-18.34C378.26,93.25,296.21,11.2,195,11.2S11.74,93.25,11.74,194.46  c0,6.19,0.32,12.31,0.92,18.34" />
+								<path class="gaugeBar"  fill="none" stroke-dasharray="614" stroke-dashoffset="614" d="M377.34,212.8c0.6-6.03,0.92-12.15,0.92-18.34C378.26,93.25,296.21,11.2,195,11.2S11.74,93.25,11.74,194.46  c0,6.19,0.32,12.31,0.92,18.34" />
+							</svg>
+							<!-- e: 차트 -->
+						</div>
+						<!-- e: 차트영역 -->
+
+						<!-- s: 랭킹상세영역 -->
+						<div class="gradeBox">
+							<ul class="gradeInfo">
+								<li class="rank">
+									<dl>
+										<dt>랭킹</dt>
+										<dd>상위 <span class="fontNum">4</span><span class="fontNum">%</span></dd>
+									</dl>
+								</li>
+								<li class="average">
+									<dl>
+										<dt>또래 평균</dt>
+										<dd><span class="fontNum">827</span>점</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+						<!-- e: 랭킹상세영역 -->
+					</div>
+					<!-- e: main grade -->
+
+					<!-- s: 신용기록 -->
+					<div class="mainBx bdType">
+						<h3 class="mainTit">신용기록</h3>
+						<a href="#none" class="mainBan" data-record="신용카드">
+							<strong class="tit"><span>KB카드 신용카드 발급</span>건으로 <br>신용정보가 조회되었어요.</strong>
+							<span class="date fontNum">2020.9.20</span>
+						</a>
+						<ul class="mainLst">
+							<li>
+								<a href="#none" class="linkLst">
+									<strong class="tit">조회내역</strong>
+									<span class="sub"><span class="fontNum">21</span>건</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none" class="linkLst">
+									<strong class="tit">변동내역</strong>
+									<span class="sub"><span class="fontNum">0</span>건</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- e: 신용기록 -->
+
+					<!-- s: 나의 금융 현황 -->
+					<div class="mainBx lineType">
+						<h3 class="mainTit">나의 금융 현황</h3>
+						<ul class="mainLst">
+							<li>
+								<a href="#none" class="linkLst">
+									<strong class="tit">신용카드 발급 가능성</strong>
+									<span class="sub fontNum"><span class="fontNum">72</span>%</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none" class="linkLst">
+									<strong class="tit">대출잔액</strong>
+									<span class="sub"><span class="fontNum">242,304</span>천원</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none" class="linkLst">
+									<strong class="tit">연체내역</strong>
+									<span class="sub"><span class="fontNum">0</span>건</span>
+								</a>
+							</li>
+						</ul>
+						<ul class="moreInfo">
+							<li>
+								<a href="#none" class="linkInfo">
+									<strong class="tit">신용 컨설팅</strong>
+									<span class="txt">내 금융 활동 진단 결과보기</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none" class="linkInfo">
+									<strong class="tit">FAQ</strong>
+									<span class="txt">신용에 대해 자주 묻는 질문, 답 모아보기</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- e: 나의 금융 현황 -->
+
+
+				</div>
+				<!-- e: contents -->
+
+				<!-- s: 고객센터 -->
+				<div class="mainBx mainCs bdType">
+					<h3 class="mainTit">고객센터</h3>
+					<div class="mainCsBx">
+						<strong class="mainCsTit">서비스이용</strong>
+						<span class="tit">NICE평가정보 고객센터</span>
+						<span class="cont"><a href="tel:1600-1533" class="mainCsTel fontNum">1600-1533</span></a>
+					</div>
+					<div class="mainCsBx">
+						<strong class="mainCsTit"><span>가입</span><span>변경</span><spna>해지</span></strong>
+						<span class="tit">삼성카드 대표전화</span>
+						<span class="cont"><a href="tel:1600-1533" class="mainCsTel fontNum">1600-1533</span></a>
+					</div>
+				</div>
+				<!-- e: 고객센터 -->
+			</div>
+
+		</div>
+		<!-- e: container -->
+
+
+
+		<!-- s: footer -->
+		<div id="footer">
+			<div>
+				<!-- 공지사항 -->
+				<div class="ft-con ft-con1">
+					<div class="ft-inner">
+						<dl class="dl-notice clfix">
+							<dt class="tit"><span class="ico-notice"></span>공지사항</dt>
+							<dd>
+								<a href="#nolink" id="noticeOpenPop" data-noticeseq=""><span class="notice-subject"></span></a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- 신용정보사유 코드 조회 -->
+				<div class="ft-con ft-con2">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li class="last">
+								<span class="ft-input-wrap">
+									<input type="text" id="certi_code" name="certi_code" title="신용정보사유 코드조회" placeholder="신용정보사유 코드조회">
+									<button title="새창열림" class="btn-ft-search">검색하기</button>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 약관 영역 -->
+				<div class="ft-con ft-con3">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="03"><strong>개인정보취급방침</strong></a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="06"><strong>개인정보처리방침</strong></a>
+							</li>
+						</ul>
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="01">상품 이용약관</a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="02">웹서비스 이용약관</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ft-con  ft-con4">
+					<div class="ft-inner">
+						<address class="ft-addr">서울시 영등포구 국회대로74길 4(여의도동) NICE평가정보㈜</address>
+						<ul class="list-ft-info clfix">
+							<li>대표이사 신희부</li>
+							<li class="last">사업자등록번호 116-81-15020</li>
+						</ul>
+						<p class="txt-copyright">ⓒ NICE INFORMATION CO., LDT.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e: footer -->
+	</div>
+</body>
+
+</html>

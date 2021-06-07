@@ -1,0 +1,62 @@
+
+
+[CSS]
+
+css/bam/ssc/cp/common.css 
+css/bam/ssc/cp/sub.css
+css/bam/ssc/cp/main.css
+css/bam/ssc/cp/free.css
+
+
+[스크립트 수정됌] (개발실 전달)
+js/bam/ssc/cp/common.js
+// 20201019 개발영역 scoreBarFunc2함수 추가
+
+
+
+[Img]
+img/bam/ssc/cp/icon_top.png (수정됨)
+img/bam/ssc/cp/bg_bar2.png (추가)
+img/bam/ssc/cp/icon_state_1~ 5(추가)
+
+
+>>유/무료메인 이미지추가 (코멘트없으면, 추가된 이미지)<<
+<공통>
+img/bam/ssc/cp/graph_bg.png
+img/bam/ssc/cp/graph_con1 ~5.png
+img/bam/ssc/cp/graph_connull.png
+img/bam/ssc/cp/ico_g_card.png
+img/bam/ssc/cp/ico_g_graph.png
+img/bam/ssc/cp/ico_g_loan.png
+img/bam/ssc/cp/ico_g_time.png
+img/bam/ssc/cp/ico_arr.gif
+
+
+
+<main폴더>
+img/bam/ssc/cp/main/ico_grade_state1 ~ 5.png
+
+
+
+<free폴더>
+img/bam/ssc/cp/free/bg_timecnt_type1 ~ 2.png (수정됨)
+img/bam/ssc/cp/free/ico_notice_item1 ~ 3.png (수정됨)
+img/bam/ssc/cp/free/ico_timelist_type1~3.png (수정됨)
+
+img/bam/ssc/cp/free/bg_timecnt_type3.png (삭제)
+img/bam/ssc/cp/free/btn_link.png(삭제)
+
+
+img/bam/ssc/cp/free/ico_grade_free1 ~ 5.png
+img/bam/ssc/cp/free/ico_grade_freenull.png
+
+
+
+
+
+
+
+
+
+
+

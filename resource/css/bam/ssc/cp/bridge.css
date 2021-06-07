@@ -1,0 +1,580 @@
+@charset "euc-kr";
+/* 20200709 수정 */
+/* 20200219 수정 반영 */
+/* 20200214 수정 반영 */
+
+
+
+
+
+
+
+
+
+/***************************************************************************** 공통영역 *****************************************************************************/
+#header{display:none}
+#footer{display:none}
+.bridgeWrap{padding:0}
+.bridgeCon{overflow:hidden;position:relative;outline:none}
+
+
+/* scroll type */
+.bridgeWrap.scrollType .bridgeCon{height:568px}
+
+
+/* slide type */
+.bridgeWrap.slideType{width:100%;height:100%}
+.bridgeWrap.slideType .slick-dots{position:absolute;top:50%;right:8px;margin-top:-35px;z-index:2}
+.bridgeWrap.slideType .slick-dots > li{display:block;margin-top:2px}
+.bridgeWrap.slideType .slick-dots > li:first-child{margin-top:0}
+.bridgeWrap.slideType .slick-dots button{display:block;width:2px;height:13px;padding:0;border:none;background:#b3b3b3;color:transparent;font-size:0;text-indent:-999px;outline:none;transition:all 0.2s linear}
+.bridgeWrap.slideType .slick-dots .slick-active button{height:25px;background:#212121}
+
+
+
+
+/* default */
+.bridgeTop{position:absolute;top:85px;left:0;width:100%;text-align:center}
+.bridgeTit,
+.bridgeTxt,
+.bridgeBtn{margin-top:20px;opacity:0}
+.bridgeTit{height:18px;margin-bottom:12px}
+.bridgeTit img{display:inline-block;width:auto;height:100%}
+.bridgeTxt{margin-bottom:3px;color:#727272;font-size:14px;font-family:'NanumSquareR';font-weight:200}
+.bridgeBtn{display:inline-block;position:relative;margin-top:35px;font-family:'NanumSquareR';font-size:17px;font-weight:700;vertical-align:top}
+.bridgeBtn:before{content:'';display:block;position:absolute;bottom:4px;left:0;width:100%;border-bottom:1px solid #727272}
+
+
+
+/* active */
+.bridgeCon.on .bridgeTit{animation:bridgeTop 0.6s ease-out forwards}
+.bridgeCon.on .bridgeTxt{animation:bridgeTop 0.6s ease-out forwards}
+.bridgeCon.on .bridgeBtn{animation:bridgeTop2 0.6s ease-out forwards}
+.bridgeCon.on .bridgeTop > *:nth-child(1){animation-delay:0.0s}
+.bridgeCon.on .bridgeTop > *:nth-child(2){animation-delay:0.2s}
+.bridgeCon.on .bridgeTop > *:nth-child(3){animation-delay:0.4s}
+.bridgeCon.on .bridgeTop > *:nth-child(4){animation-delay:0.6s}
+
+@keyframes bridgeTop{ 100%{margin-top:0;opacity:1} }
+@keyframes bridgeTop2{ 100%{margin-top:20px;opacity:1} }
+@media all and (min-height:620px){
+    .bridgeBtn{margin-top:45px}
+    @keyframes bridgeTop2{ 100%{margin-top:30px;opacity:1} }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************** 1page *****************************************************************************/
+.loginWrap{position:absolute;top:40px;left:20px;right:20px;}
+.loginTop{text-align:center}
+.loginTit{margin-top:20px;opacity:0}
+.loginTit01{height:15px;margin-bottom:8px}
+.loginTit02{height:21px;margin-bottom:12px}
+.loginTit03{height:15px}
+.loginTit img{display:inline-block;width:auto;height:100%}
+
+@media all and (min-height:620px){
+    .loginTop{transform:scale(1.1)}
+}
+@media all and (min-height:735px){
+    .loginWrap{top:55px}
+}
+@media all and (min-height:800px){
+    .loginWrap{top:70px}
+}
+
+
+.loginCont{margin-top:80px;text-align:center;opacity:0}
+
+.agreeWrap{margin-top:32px;text-align:left}
+.agreeTop,
+.agreeCont{border-bottom:1px solid #cccccc}
+.agreeTop{padding-top:5px;padding-bottom:5px;border-top:1px solid #cccccc}
+.agreeCont{padding:10px;}
+.agreeWrap .inpChk input + span{width:16px;height:16px;top:2px;}
+.agreeWrap .inpChk input:checked + span{background-position:left -16px}
+.agreeTop .inpChk{color:#000000;font-size:14px;}
+.agreeCont .inpChk{color:#727272;font-size:13px;}
+.agreeElem{margin-top:5px;color:#666666;font-size:12px}
+.agreeElem:first-child{margin-top:0}
+.btnAgree{margin-left:10px;color:#666666;font-size:13px;text-decoration:underline}
+
+.agreePop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);z-index:999;animation:agreePop 0.5s ease-out;opacity:0}
+.agreePopCont{position:absolute;top:50%;left:20px;right:20px;height:350px;margin-top:-50px;padding:15px;background-color:#ffffff;opacity:0}
+.agreePopTit{margin-bottom:15px;padding:5px 0 15px;border-bottom:1px solid #dddddd;background:none;font-size:15px}
+.agreePopInner{overflow-y:auto;height:calc(100% - 55px);font-size:14px;-webkit-overflow-scrolling:touch}
+.btnAgreeClose{display:block;position:absolute;top:15px;right:15px;width:30px;height:30px;background:url('../../../../img/bam/hdc/cc/bridge/btn_agree_close.png') center center no-repeat;background-size:14px 14px;color:transparent;font-size:0;-webkit-tap-highlight-color:rgba(255,255,255,0)}
+
+.agreePop.on{display:block;animation:agreePop 0.5s linear forwards}
+.agreePop.on .agreePopCont{animation:agreePopCont 0.5s ease-out forwards}
+@keyframes agreePop{ 100%{opacity:1} }
+@keyframes agreePopCont{ 100%{margin-top:-175px;opacity:1} }
+
+.agreePop.off{animation:agreePopRev 0.5s linear forwards}
+.agreePop.off .agreePopCont{animation:agreePopContRev 0.5s linear forwards}
+.agreePop.off .btnAgreeClose{animation:agreePopClose 0.5s linear forwards}
+@keyframes agreePopRev{ 0%{opacity:1} }
+@keyframes agreePopContRev{ 0%{margin-top:-175px;opacity:1} }
+@keyframes agreePopClose{ 100%{transform:rotate(360deg)} }
+
+
+.certWrap{margin-top:32px;font-size:0;text-align:center}
+.certElem{display:inline-block;position:relative;width:92px;padding-top:64px;color:#000000;font-size:14px;vertical-align:top}
+.certElem:before{content:'';display:block;position:absolute;top:0;left:50%;width:53px;height:53px;margin-left:-25px;border-radius:50%;background-color:#f2f2f2;background-position:center 8px;background-repeat:no-repeat;background-size:40px auto}
+.certElem.phone:before{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_login_phone.png')}
+.certElem.card:before{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_login_card.png')}
+.certElem.ipin:before{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_login_ipin.png')}
+.btnLogin{display:inline-block;overflow:hidden;width:0;height:40px;line-height:40px;margin-top:20px;border-radius:2px;background-color:#000000;color:#ffffff;font-size:17px;font-weight:700;text-align:center;vertical-align:top;white-space:nowrap}
+
+
+
+/* active */
+.bridgeCon.on .loginTit{animation:loginTop 0.6s ease-out forwards}
+.bridgeCon.on .loginTit01{animation-delay:0.0s}
+.bridgeCon.on .loginTit02{animation-delay:0.2s}
+.bridgeCon.on .loginTit03{animation-delay:0.4s}
+@keyframes loginTop{ 100%{margin-top:0;opacity:1} }
+
+.bridgeCon.on .loginCont{animation:loginCont 0.6s ease-out 0.5s forwards}
+@keyframes loginCont{ 100%{margin-top:32px;opacity:1} }
+
+.bridgeCon.on .btnLogin{animation:btnLogin 0.5s ease-out 1.0s forwards}
+@keyframes btnLogin{ 100%{width:100%} }
+
+.certElem.on:before{animation:certElem 0.2s linear forwards}
+@keyframes certElem{
+    50%{background-color:#f6f6f6;background-position:center 5px;transform:rotateY(90deg)}
+    51%, 100%{background-color:#1e75d6;background-position:center -35px}
+}
+.certElem.off:before{animation:certElemRev 0.2s linear forwards}
+@keyframes certElemRev{
+    0%, 50%{background-color:#1e75d6;background-position:center -35px}
+    50%{transform:rotateY(90deg)}
+    51%, 100%{background-color:#f6f6f6;background-position:center 5px}
+}
+
+
+
+
+.bridgePhone{position:absolute;top:418px;width:100%;height:400px}
+.bridgePhoneElem{position:absolute;background-position:left top;background-repeat:no-repeat;background-size:100%;opacity:0}
+.bridgePhoneElem01{top:50px;left:50%;width:188px;height:231px;margin-left:-180px;background-image:url('../../../../img/bam/hdc/cc/bridge/img_phone01.png')}
+.bridgePhoneElem02{top:98px;left:50%;width:231px;height:188px;margin-left:70px;background-image:url('../../../../img/bam/hdc/cc/bridge/img_phone02.png')}
+.bridgePhoneElem03{top:-15px;left:50%;width:231px;height:188px;margin-left:-341px;background-image:url('../../../../img/bam/hdc/cc/bridge/img_phone03.png')}
+
+
+/* active */
+.bridgeCon.on .bridgePhoneElem01{animation:bridgePhone01 0.6s ease-out forwards}
+.bridgeCon.on .bridgePhoneElem02{animation:bridgePhone02 0.6s ease-out 0.3s forwards}
+.bridgeCon.on .bridgePhoneElem03{animation:bridgePhone03 0.6s ease-out 0.5s forwards}
+@keyframes bridgePhone01{ 100%{top:0;margin-left:-130px;opacity:1} }
+@keyframes bridgePhone02{ 100%{top:48px;margin-left:20px;opacity:1} }
+@keyframes bridgePhone03{ 100%{top:-65px;margin-left:-291px;opacity:1} }
+
+
+@media all and (min-height:620px){
+    .bridgeCon01 .bridgeTop{top:115px;transform:scale(1.1)}
+    .bridgePhone{top:478px
+      ;transform:scale(1.3)}
+}
+@media all and (min-height:735px){
+    .bridgePhone{top:533px;transform:scale(1.5)}
+}
+@media all and (min-height:800px){
+    .bridgeCon01 .bridgeTop{top:130px}
+    .bridgePhone{top:588px;transform:scale(1.7)}
+}
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************** 2page *****************************************************************************/
+.bridgeCon02{background-color:#f9f9f9}
+.bridgeCon02 .bridgeTop{top:48px}
+.bridgeSample{position:absolute;top:290px;left:0;width:100%;padding:0;opacity:0}
+.bridgeSample .slick-cloned{opacity:0 !important}
+.bridgeSample .slick-list{position:relative;padding-bottom:30px !important}
+.bridgeSample .slick-list:before{content:'';display:block;position:absolute;top:0;left:50%;width:290px;height:552px;margin-left:-128px;background:url('../../../../img/bam/hdc/cc/bridge/bg_sample.png') left top no-repeat;background-size:100% 100%;transform:scale(0.9)}
+.bridgeSampleCon{width:233px;margin-top:30px;padding:46px 10px 0;outline:none;opacity:0}
+.bridgeSampleCon img{transition:all 0.1s linear}
+.bridgeSampleCon.slick-current img{border-radius:18px}
+
+
+/* active */
+.bridgeCon.on .bridgeSample{animation:bridgeSample 0.5s ease-out 0.6s forwards}
+.bridgeCon.on .bridgeSampleCon{animation:bridgeSampleCon 0.5s ease-out forwards}
+.bridgeCon.on .bridgeSampleCon.slick-cloned{animation:none}
+.bridgeCon.on .bridgeSampleCon[data-slick-index="0"]{animation-delay:1.0s}
+.bridgeCon.on .bridgeSampleCon[data-slick-index="1"]{animation-delay:1.2s}
+.bridgeCon.on .bridgeSampleCon[data-slick-index="2"]{animation-delay:1.4s}
+@keyframes bridgeSample{ 100%{top:198px;opacity:1} }
+@keyframes bridgeSampleCon{ 100%{margin-top:0;opacity:1} }
+
+
+@media all and (min-height:620px){
+    .bridgeCon02 .bridgeTop{top:70px;transform:scale(1.1)}
+    .bridgeSample{top:340px}
+    .bridgeSample .slick-list:before{margin-left:-127px;transform:scale(1)}
+    .bridgeSampleCon{width:258px;padding-top:23px}
+    @keyframes bridgeSample{ 100%{top:255px;opacity:1} }
+}
+@media all and (min-height:735px){
+    .bridgeCon02 .bridgeTop{top:85px}
+    .bridgeSample{top:360px}
+    @keyframes bridgeSample{ 100%{top:280px;opacity:1} }
+}
+@media all and (min-height:800px){
+    .bridgeCon02 .bridgeTop{top:100px}
+    .bridgeSample{top:400px}
+    @keyframes bridgeSample{ 100%{top:325px;opacity:1} }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************** 3page *****************************************************************************/
+.bridgeCon03 .bridgeTop{top:48px}
+.bridgeBenefit{position:absolute;bottom:0;left:0;width:100%;height:400px}
+.bridgeBenefitCon{position:absolute;left:50%;bottom:10px;width:197px;height:368px;margin-left:-85px;margin-bottom:-80px;background:url('../../../../img/bam/hdc/cc/bridge/img_benefit_phone.png') left top no-repeat;background-size:100% 100%;z-index:1;opacity:0}
+.bridgeBenefitCon .bridgeBenefitPhone{display:block;overflow:hidden;position:absolute;top:37px;left:5px;width:161px;height:285px}
+.bridgeBenefitCon .bridgeBenefitPhone > *{position:absolute;top:0;left:100%;width:100%;height:100%;background-repeat:no-repeat;background-position:left top;background-size:100% 100%}
+.bridgeBenefitCon .bridgeBenefitPhone > *:nth-child(1){left:0;background-image:url('../../../../img/bam/hdc/cc/bridge/img_benefit_shopping.png')}
+.bridgeBenefitCon .bridgeBenefitPhone > *:nth-child(2){background-image:url('../../../../img/bam/hdc/cc/bridge/img_benefit_play.png')}
+.bridgeBenefitCon .bridgeBenefitPhone > *:nth-child(3){background-image:url('../../../../img/bam/hdc/cc/bridge/img_benefit_digital.png')}
+.bridgeBenefitCon .bridgeBenefitPhone > *:nth-child(4){background-image:url('../../../../img/bam/hdc/cc/bridge/img_benefit_light.png')}
+.bridgeBenefitElem{position:absolute;left:50%;margin-bottom:-80px;border-radius:50%;background-repeat:no-repeat;background-position:center center;opacity:0;transform:scale(0.9)}
+.bridgeBenefitElem01{bottom:60px;width:71px;height:71px;margin-left:68px}
+.bridgeBenefitElem02{bottom:90px;width:57px;height:57px;margin-left:-128px}
+.bridgeBenefitElem03{bottom:235px;width:54px;height:54px;margin-left:65px}
+.bridgeBenefitElem04{bottom:255px;width:39px;height:39px;margin-left:-135px}
+.bridgeBenefitElem05{bottom:180px;width:36px;height:36px;margin-left:115px}
+.bridgeBenefitElem06{bottom:170px;width:30px;height:30px;margin-left:-150px}
+
+
+/* active */
+.bridgeCon.on .bridgeBenefitCon{animation:bridgeBenefit 0.6s ease-out 0.5s forwards}
+.bridgeCon.on .bridgeBenefitPhone > *:nth-child(1){animation:benefitPhoneOn 2.5s linear 0.5s forwards}
+.bridgeCon.on .bridgeBenefitPhone > *:nth-child(2){animation:benefitPhoneOn 2.5s linear 3.0s forwards}
+.bridgeCon.on .bridgeBenefitPhone > *:nth-child(3){animation:benefitPhoneOn 2.5s linear 5.5s forwards}
+.bridgeCon.on .bridgeBenefitPhone > *:nth-child(4){animation:benefitPhoneOn2 2.5s linear 8.0s forwards}
+@keyframes bridgeBenefit{ 100%{margin-bottom:0;opacity:1} }
+@keyframes benefitPhoneOn{
+    10%, 90%{left:0}
+    100%{left:-100%}
+}
+@keyframes benefitPhoneOn2{ 10%, 100%{left:0} }
+
+
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem{animation:benefitElem 5s linear 0.1s forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem01{animation:benefitElem01 10.5s linear 0.0s forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem02{animation:benefitElem02 10.5s linear 0.2s forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem03{animation:benefitElem03 10.5s linear 0.35s forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem04{animation:benefitElem04 10.5s linear 0.2s forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem05{animation:benefitElem05 10.5s linear 0.15s forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem06{animation:benefitElem06 10.5s linear 0.35s forwards}
+@keyframes benefitElem01{
+    5%{margin-bottom:-10px}
+    7%, 100%{margin-bottom:0;opacity:1}
+
+    0%, 23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-left:68px}
+    27%, 52%, 77%{margin-left:72px;margin-bottom:-2px}
+    23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-bottom:0;opacity:1}
+    25%, 50%, 75%{margin-left:25px;margin-bottom:15px;opacity:0.5}
+}
+@keyframes benefitElem02{
+    4%{margin-bottom:-10px}
+    6%, 100%{margin-bottom:0;opacity:1}
+
+    0%, 23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-left:-128px}
+    27%, 52%, 77%{margin-left:-132px;margin-bottom:-2px}
+    23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-bottom:0;opacity:1}
+    25%, 50%, 75%{margin-left:-85px;margin-bottom:10px}
+}
+@keyframes benefitElem03{
+    4%{margin-bottom:-10px}
+    6%, 100%{margin-bottom:0;opacity:1}
+
+    0%, 23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-left:75px}
+    27%, 52%, 77%{margin-left:76px;margin-bottom:0}
+    23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-bottom:0;opacity:1}
+    25%, 50%, 75%{margin-left:50px;margin-bottom:-5px}
+}
+@keyframes benefitElem04{
+    4%{margin-bottom:-10px}
+    6%, 100%{margin-bottom:0;opacity:1}
+
+    0%, 23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-left:-145px}
+    27%, 52%, 77%{margin-left:-147px;margin-bottom:1px}
+    23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-bottom:0;opacity:1}
+    25%, 50%, 75%{margin-left:-95px;margin-bottom:-10px}
+}
+@keyframes benefitElem05{
+    4%{margin-bottom:-10px}
+    6%, 100%{margin-bottom:0;opacity:1}
+
+    0%, 23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-left:115px}
+    27%, 52%, 77%{margin-left:117px;margin-bottom:0}
+    23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-bottom:0;opacity:1}
+    25%, 50%, 75%{margin-left:55px;margin-bottom:2px}
+}
+@keyframes benefitElem06{
+    4%{margin-bottom:-10px}
+    6%, 100%{margin-bottom:0;opacity:1}
+
+    0%, 23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-left:-150px}
+    27%, 52%, 77%{margin-left:-152px;margin-bottom:0}
+    23%, 29%, 48%, 54%, 73%, 79%, 100%{margin-bottom:0;opacity:1}
+    25%, 50%, 75%{margin-left:-82px;margin-bottom:5px}
+}
+
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem:before,
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem:after{content:''}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem:before,
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem span:nth-child(1),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem span:nth-child(2),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem:after{display:block;position:absolute;top:0;left:0;width:100%;height:100%;border-radius:50%;background-color:none;background-repeat:no-repeat;background-position:center center;opacity:0}
+
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem01:before{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_shopping01.png');background-size:28px 23px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem01 span:nth-child(1){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_play01.png');background-size:34px 32px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem01 span:nth-child(2){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_digital01.png');background-size:45px 45px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem01:after{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_light01.png');background-size:25px 41px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem02:before{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_shopping02.png');background-size:31px 36px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem02 span:nth-child(1){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_play02.png');background-size:25px 25px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem02 span:nth-child(2){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_digital02.png');background-size:31px 31px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem02:after{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_light02.png');background-size:25px 31px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem03:before{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_shopping03.png');background-size:25px 28px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem03 span:nth-child(1){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_play03.png');background-size:28px 21px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem03 span:nth-child(2){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_digital03.png');background-size:18px 27px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem03:after{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_light03.png');background-size:28px 20px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem04:before{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_shopping04.png');background-size:18px 20px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem04 span:nth-child(1){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_play04.png');background-size:17px 18px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem04 span:nth-child(2){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_digital04.png');background-size:20px 22px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem04:after{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_light04.png');background-size:19px 17px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem05:before{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_shopping05.png');background-size:22px 18px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem05 span:nth-child(1){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_play05.png');background-size:12px 20px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem05 span:nth-child(2){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_digital05.png');background-size:20px 18px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem05:after{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_light05.png');background-size:21px 20px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem06:before{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_shopping06.png');background-size:20px 20px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem06 span:nth-child(1){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_play06.png');background-size:18px 16px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem06 span:nth-child(2){background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_digital06.png');background-size:16px 15px}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem06:after{background-image:url('../../../../img/bam/hdc/cc/bridge/icon_benefit_light06.png');background-size:14px 16px}
+
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem:before{background-color:#fe817b;animation:benefitIcon01 10.5s linear forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem span:nth-child(1){background-color:#cb94ff;animation:benefitIcon02 10.5s linear forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem span:nth-child(2){background-color:#00488c;animation:benefitIcon03 10.5s linear forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem:after{background-color:#f0e627;animation:benefitIcon04 10.5s linear forwards}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem01:before,
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem01 span:nth-child(1),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem01 span:nth-child(2),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem01:after{animation-delay:0.0s}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem02:before,
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem02 span:nth-child(1),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem02 span:nth-child(2),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem02:after{animation-delay:0.2s}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem03:before,
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem03 span:nth-child(1),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem03 span:nth-child(2),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem03:after{animation-delay:0.35s}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem04:before,
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem04 span:nth-child(1),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem04 span:nth-child(2),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem04:after{animation-delay:0.2s}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem05:before,
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem05 span:nth-child(1),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem05 span:nth-child(2),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem05:after{animation-delay:0.15s}
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem06:before,
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem06 span:nth-child(1),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem06 span:nth-child(2),
+.bridgeCon.on .bridgeBenefit .bridgeBenefitElem06:after{animation-delay:0.35s}
+@keyframes benefitIcon01{
+  0%, 25%{opacity:1}
+  26%, 50%{opacity:0}
+  51%, 75%{opacity:0}
+  76%, 100%{opacity:0}
+}
+@keyframes benefitIcon02{
+  0%, 25%{opacity:0}
+  26%, 50%{opacity:1}
+  51%, 75%{opacity:0}
+  76%, 100%{opacity:0}
+}
+@keyframes benefitIcon03{
+  0%, 25%{opacity:0}
+  26%, 50%{opacity:0}
+  51%, 75%{opacity:1}
+  76%, 100%{opacity:0}
+}
+@keyframes benefitIcon04{
+  0%, 25%{opacity:0}
+  26%, 50%{opacity:0}
+  51%, 75%{opacity:0}
+  76%, 100%{opacity:1}
+}
+
+
+
+
+
+
+@media all and (min-height:620px){
+    .bridgeCon03 .bridgeTop{top:70px;transform:scale(1.1)}
+    .bridgeBenefit{bottom:35px;transform:scale(1.1)}
+}
+@media all and (min-height:735px){
+    .bridgeCon03 .bridgeTop{top:85px}
+    .bridgeBenefit{bottom:65px;transform:scale(1.2)}
+}
+@media all and (min-height:800px){
+    .bridgeCon03 .bridgeTop{top:100px}
+    .bridgeBenefit{bottom:100px}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************** 4page *****************************************************************************/
+.bridgePack{position:relative;height:100%}
+.bridgePackElem{overflow:hidden;position:relative;height:25%;width:100%;opacity:0;background:#ffffff}
+.bridgePackElem:nth-child(odd){margin-left:-150px}
+.bridgePackElem:nth-child(even){margin-left:150px}
+.bridgePackElem01{background:#ff817b}
+.bridgePackElem03{background:url('../../../../img/bam/hdc/cc/bridge/bg_pack_digital.png') left top no-repeat;background-size:100% 100%}
+.bridgePackElem:before{content:'';display:block;position:absolute;top:50%;background-repeat:no-repeat;background-position:left top;background-size:100% 100%}
+.bridgePackElem01:before{right:20px;margin-top:-54px;width:108px;height:108px;background-image:url('../../../../img/bam/hdc/cc/bridge/img_packelem_shopping.png')}
+.bridgePackElem02:before{left:36px;margin-top:-53px;width:85px;height:105px;background-image:url('../../../../img/bam/hdc/cc/bridge/img_packelem_play.png')}
+.bridgePackElem03:before{right:-13px;top:18px;width:158px;height:185px;background-image:url('../../../../img/bam/hdc/cc/bridge/img_packelem_digital.png')}
+.bridgePackElem04:before{left:19px;margin-top:-38px;width:110px;height:76px;background-image:url('../../../../img/bam/hdc/cc/bridge/img_packelem_light.png')}
+
+.bridgePackCon{position:absolute;top:50%;transform:translate(0, -50%);text-align:left}
+.bridgePackCon.left{left:20px;margin-left:-25px}
+.bridgePackCon.right{right:40px;margin-right:-25px}
+.bridgePackCon *{font-family:'NanumSquareR';font-weight:200}
+.bridgePackCon.type1 *{color:#000000}
+.bridgePackCon.type2 *{color:#ffffff}
+.bridgePackTxt1{font-size:14px}
+.bridgePackTxt2{height:19px;margin:3px 0 12px}
+.bridgePackTxt2 img{height:100%}
+.bridgePackTxt3{font-size:12px}
+.bridgePackBtn{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;text-indent:150%;white-space:nowrap;}
+
+
+
+
+/* active */
+.bridgeCon.on .bridgePackElem:nth-child(odd){animation:packElem 0.8s ease-out forwards}
+.bridgeCon.on .bridgePackElem:nth-child(even){animation:packElem 0.8s ease-out forwards}
+.bridgeCon.on .bridgePackElem:nth-child(1){animation-delay:0.0s}
+.bridgeCon.on .bridgePackElem:nth-child(2){animation-delay:0.2s}
+.bridgeCon.on .bridgePackElem:nth-child(3){animation-delay:0.4s}
+.bridgeCon.on .bridgePackElem:nth-child(4){animation-delay:0.6s}
+@keyframes packElem{ 100%{margin-left:0;opacity:1} }
+
+.bridgeCon.on .bridgePackCon{animation:packCon 0.8s ease-out forwards}
+.bridgeCon.on .bridgePackElem:nth-child(1) .bridgePackCon{animation-delay:0.6s}
+.bridgeCon.on .bridgePackElem:nth-child(2) .bridgePackCon{animation-delay:0.8s}
+.bridgeCon.on .bridgePackElem:nth-child(3) .bridgePackCon{animation-delay:1.0s}
+.bridgeCon.on .bridgePackElem:nth-child(4) .bridgePackCon{animation-delay:1.2s}
+@keyframes packCon{
+    100%{margin-left:0;margin-right:0}
+}
+
+
+
+
+@media all and (min-height:620px){
+    .bridgePackElem:before{transform:scale(1.1)}
+    .bridgePackElem01:before{right:25px}
+    .bridgePackElem02:before{left:31px}
+    .bridgePackElem03:before{top:26px;right:-5px}
+    .bridgePackElem04:before{left:25px}
+}
+@media all and (min-height:735px){
+    .bridgePackElem:before{transform:scale(1.3)}
+    .bridgePackElem01:before{right:35px;}
+    .bridgePackElem02:before{left:41px;}
+    .bridgePackElem03:before{right:8px;top:48px}
+    .bridgePackElem04:before{left:35px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */

@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<title>삼성카드 통합플랫폼TFT</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bzw/font.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/ui.css" />
+	<script type="text/javascript" src="../../resource/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/slick.min.js"></script>
+
+	<script src="../../resource/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bzm/jquery.ui.totop.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/waypoints.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/ycounter.v3.0.js"></script>
+
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/common.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+
+			// graphBar animation
+
+
+
+			// 신용우량률
+			$('.crdAgeArea').waypoint(function() {
+				scoreBarFunc2(1);
+			}, {
+				offset: '80%'
+			});
+
+			// 신용상태
+			$('.crdStateSlider').slick({
+				infinite: false,
+				centerMode: false,
+				centerPadding: '0px',
+				variableWidth : true,
+				arrows: false,
+				dots: false,
+				speed: 500
+			});
+
+			// 신용우량률
+			$('.crdRatioArea').waypoint(function() {
+				scoreBarFunc2(2);
+			}, {
+				offset: '80%'
+			});
+
+
+		});
+	</script>
+
+
+</head>
+
+<body>
+	<div id="wrap">
+
+		<!-- s: header -->
+		<div id="header">
+			<div class="leftMenu">
+				<a href="#none" class="btnBack">이전</a>
+				<h1 class="title">신용평점</h1>
+			</div>
+			<div class="rightMenu">
+				<a href="#none" class="btnHome">홈</a>
+				<!-- <a href="#none" class="btnGnb">메뉴 열기<span></span></a>
+				<a href="#none" class="btnClose">메뉴 닫기</a> -->
+			</div>
+		</div>
+		<!-- e: header -->
+
+
+		<!-- s: gnb -->
+		<!-- <div id="gnb">
+			<div class="gnbWrap">
+				<div class="gnbDimm"></div>
+				<div class="gnbCont">
+					<ul class="gnbDepth1">
+						<li><a href="#none" class="btnGnbDepth1">신용 메인</a></li>
+						<li><a href="#none" class="btnGnbDepth1 on">신용 평점 분석</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 변동내역</a></li>
+						<li><a href="#none" class="btnGnbDepth1">나의 금융 현황</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 컨설팅</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 Q&amp;A</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- s: 2depth -->
+		<div class="snbDepth2">
+			<ul class="snbLst2">
+				<!-- <li><a href="#void" class="btnDepth2">현황</a></li> -->
+				<li><a href="#void" class="btnDepth2 on">비교분석</a></li>
+				<li><a href="#void" class="btnDepth2">변동이력</a></li>
+			</ul>
+		</div>
+		<!-- e: 2depth -->
+	</div>
+	<!-- e: gnb -->
+
+	<!-- s: container -->
+	<div id="container">
+
+		<div class="crdAnalysisWrap">
+			<div class="guideTxt02">
+				<p>내 신용평점은<br> 전체 소비자 평균 대비<br><strong class="fontNum">30</strong>점 높아요</p>
+			</div>
+
+			<!-- s: 신용평점 비교 -->
+			<div class="crdAgeArea pdType">
+				<div class="graphBarWrap" id="graphBarWrap1">
+					<ul class="list">
+						<li>
+							<p class="tit">나</p>
+							<div class="graphBar">
+								<p class="bar" data-score="920">
+									<span class="scoreBox">
+										<span class="score"><em class="fontNum">920</em><em class="txt">점</em></span>
+									</span>
+								</p>
+								<!-- <div class="barTxt">
+										<p class="barBottom low"><span class="blind">최저점</span><span class="fontNum">0</span></p>
+										<p class="barBottom high"><span class="blind">최고점</span><span class="fontNum">1,000</span></p>
+									</div> -->
+							</div>
+						</li>
+						<li>
+							<p class="tit">내 또래 평균</p>
+							<div class="graphBar">
+								<p class="bar" data-score="900">
+									<span class="scoreBox">
+										<span class="score"><em class="fontNum">900</em>
+											<emn class="txt">점</em>
+										</span>
+									</span>
+								</p>
+								<!-- <div class="barTxt">
+										<p class="barBottom low"><span class="blind">최저점</span><span class="fontNum">0</span></p>
+										<p class="barBottom high"><span class="blind">최고점</span><span class="fontNum">1,000</span></p>
+									</div> -->
+							</div>
+						</li>
+						<li>
+							<p class="tit">전체 소비자 평균</p>
+							<div class="graphBar">
+								<p class="bar" data-score="890">
+									<span class="scoreBox">
+										<span class="score"><em class="fontNum">890</em>
+											<emn class="txt">점</em>
+										</span>
+									</span>
+								</p>
+								<!-- <div class="barTxt">
+										<p class="barBottom low"><span class="blind">최저점</span><span class="fontNum">0</span></p>
+										<p class="barBottom high"><span class="blind">최고점</span><span class="fontNum">1,000</span></p>
+									</div> -->
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="blitListWrap">
+					<ul class="blitList">
+						<li>향후 1년 동안 우량한 상태를 유지할 확률이 <strong><em class="fontNum">99.80</em>%</strong>로 <strong>매우 우수</strong>합니다.</li>
+						<li><strong>동일 연령대 기준 상위 <em class="fontNum">20</em>%</strong> 수준입니다.</li>
+						<li><strong>전체 소비자 평균인 <em class="fontNum">814</em>점</strong>과 비교하여 상대적으로 <strong>높은</strong> 점수입니다.</li>
+						<li>임의의 1,000명에 대해 비교한다면 <strong class="fontNum">180등</strong> /<span class="fontNum">1,000</span>(명) 이내에 위치합니다.</li>
+					</ul>
+				</div>
+			</div>
+			<!-- e: 신용평점 비교 -->
+
+			<!-- s: 신용상태 -->
+			<div class="crdStateArea pdType bdType">
+				<div class="titWrap">
+					<h3 class="title">신용상태</h3>
+				</div>
+				<!-- ***** data-state 값
+						참 잘하고 있어요 : 1
+						잘하고 있어요 : 2
+						보통이에요 : 3
+						관리에 힘써주세요 : 4
+						걱정되요 :5
+						산출불가 : null
+					-->
+
+				<div class="crdStateSlider">
+					<div class="slide slie01">
+						<div class="stateBx">
+							<div class="state" data-state="1">
+								<div class="balloon">
+									<p class="balloonTxt">내 신용상태는 <span class="fontNum">5</span>단계 중<br /><strong><span class="fontNum">1</span>단계</strong>입니다.</p>
+								</div>
+							</div>
+							<p class="txt">참잘하고 있어요!</p>
+						</div>
+					</div>
+					<div class="slide slie02">
+						<div class="stateBx">
+							<div class="state" data-state="2">
+								<div class="balloon">
+									<p class="balloonTxt">내 신용상태는 <span class="fontNum">5</span>단계 중<br /><strong><span class="fontNum">2</span>단계</strong>입니다.</p>
+								</div>
+							</div>
+							<p class="txt">잘하고 있어요!</p>
+						</div>
+					</div>
+					<div class="slide slie03">
+						<div class="stateBx">
+							<div class="state" data-state="3">
+								<div class="balloon">
+									<p class="balloonTxt">내 신용상태는 <span class="fontNum">5</span>단계 중<br /><strong><span class="fontNum">3</span>단계</strong>입니다.</p>
+								</div>
+							</div>
+							<p class="txt">보통이에요.</p>
+						</div>
+					</div>
+					<div class="slide slie04">
+						<div class="stateBx">
+							<div class="state" data-state="4">
+								<div class="balloon">
+									<p class="balloonTxt">내 신용상태는 <span class="fontNum">5</span>단계 중<br /><strong><span class="fontNum">4</span>단계</strong>입니다.</p>
+								</div>
+							</div>
+							<p class="txt">관리에 힘써주세요.</p>
+						</div>
+					</div>
+				<div class="slide slie05">
+					<div class="stateBx">
+						<div class="state" data-state="5">
+							<div class="balloon">
+								<p class="balloonTxt">내 신용상태는 <span class="fontNum">5</span>단계 중<br /><strong><span class="fontNum">5</span>단계</strong>입니다.</p>
+							</div>
+						</div>
+						<p class="txt">걱정돼요.</p>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!-- e: 신용상태 -->
+
+		<!-- s: 신용우량률 -->
+		<div class="crdRatioArea pdType bdType">
+			<div class="titWrap">
+				<h3 class="title">신용 우량률</h3>
+			</div>
+			<div class="graphBarWrap" id="graphBarWrap2">
+				<div class="graphBar">
+					<p class="bar" data-score="908">
+						<span class="scoreBox">
+							<span class="score"><em class="fontNum">90.80</em><em class="per">%</em></span>
+						</span>
+					</p>
+					<div class="barTxt">
+						<p class="barBottom low"><span class="blind">최저점</span><span class="fontNum">0</span></p>
+						<p class="barBottom high"><span class="blind">최고점</span><span class="fontNum">100</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e: 신용우량률 -->
+
+		<!-- s: 신용평점 주요 영향요인 -->
+		<div class="crdCsArea pdType bdType">
+			<div class="titWrap">
+				<h3 class="title">신용평점 주요 영향요인</h3>
+			</div>
+			<div class="blitListWrap">
+				<ul class="blitList">
+					<li>과거 CB연체이력 및 채무불이행이력 전혀 없음</li>
+					<li>비교적 오랜 신용거래 이력 보유</li>
+					<li>현재 신용대출만 보유</li>
+					<li>위 영향요인은 종합신용평점 산출에 근거가 되는 주요사항 중 일부이며, 절대적인 평가지표가 아닙니다. 위 영향요인에는 직접적인 신용등급과는 무관하나, 금융기관 참고 목적으로 제공되는 항목 (예 : 주민번호 변경이력)이 포함되어 있습니다.</li>
+				</ul>
+			</div>
+			<button type="button" class="btnMore">더 보기</button>
+		</div>
+		<!-- e: 신용평점 주요 영향요인 -->
+		<!-- s: 신용 관리 -->
+		<div class="crdGuideArea pdType bdType">
+			<div class="titWrap">
+				<h3 class="title">내 신용을 이렇게 관리해 보세요.</h3>
+			</div>
+			<div class="blitListWrap">
+				<ul class="blitList">
+					<li>금융기관에서 고객님과의 신용거래시 1년 동안의 기간 안에 연체 위험률을 약 <em class="fontNum">0.1</em>% ~ <em class="fontNum">0.2</em>% 정도로 볼 가능성이 있습니다.</li>
+					<li>이는, 매우 낮은 신용거래 위험률로써, 대출이나 카드 거래시 상대적으로 유리한 금리와 한도적용을 받으 실 수 있을거라 예상됩니다.</li>
+					<li>앞으로도 우량한 신용도를 유지하기 위해서, 부주의한 연체 발생을 예방하도록 대금 결제와 관련하여 자동이체를 설정해 놓으시거나 혹시 부당한 타인의 명의도용에 의해 신용상의 문제가 발생하지 않도록 수시로 신용 정보 및 평점을 조회하시기 바랍니다.</li>
+					<li>대출은 고객님의 신용도에 따라 한도 및 금리가 결 되므로, 현재 약정 중이신 대출상품이 있다면, 고객님에게 최적의 대출상품인지를 정확히 파악하셔야 합니다. 보다 저렴한 대출상품을 알아 보시거나 추가로 가능한 대출상품을 알아보시기 추가로 가능한 대출상품을 알아보시기 원하실 경우, 금융감독원이 후원하고 있는 ‘맞춤대출 서비스’를 이용하시기 바랍니다.</li>
+					<li>고객님은 연체 위험률에 대한 예상은 금융기관 업권별(은행, 보험사, 카드사, 캐피탈, 저축은행 등)로 상이할 수 있으며 신용거래를 하시고자 하는 해당 금융회사에서만 보유하고 있는 거래실적 정보 등과 같은 추가적인 개인 평가 자료를 통해 달라질 수 있습니다.</li>
+				</ul>
+				</ul>
+			</div>
+			<button type="button" class="btnMore">더 보기</button>
+		</div>
+		<!-- e: 신용 관리 -->
+	</div>
+	<!-- e: crdAnalysisWrap -->
+
+	</div>
+	<!-- e: container -->
+
+
+
+	<!-- s: footer -->
+	<div id="footer">
+		<div>
+			<!-- 공지사항 -->
+			<div class="ft-con ft-con1">
+				<div class="ft-inner">
+					<dl class="dl-notice clfix">
+						<dt class="tit"><span class="ico-notice"></span>공지사항</dt>
+						<dd>
+							<a href="#nolink" id="noticeOpenPop" data-noticeseq=""><span class="notice-subject"></span></a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<!-- 신용정보사유 코드 조회 -->
+			<div class="ft-con ft-con2">
+				<div class="ft-inner">
+					<ul class="footer-menu">
+						<li class="last">
+							<span class="ft-input-wrap">
+								<input type="text" id="certi_code" name="certi_code" title="신용정보사유 코드조회" placeholder="신용정보사유 코드조회">
+								<button title="새창열림" class="btn-ft-search">검색하기</button>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 약관 영역 -->
+			<div class="ft-con ft-con3">
+				<div class="ft-inner">
+					<ul class="footer-menu">
+						<li>
+							<a href="#nolink" data-stplatcd="03"><strong>개인정보취급방침</strong></a>
+						</li>
+						<li class="last">
+							<a href="#nolink" data-stplatcd="06"><strong>개인정보처리방침</strong></a>
+						</li>
+					</ul>
+					<ul class="footer-menu">
+						<li>
+							<a href="#nolink" data-stplatcd="01">상품 이용약관</a>
+						</li>
+						<li class="last">
+							<a href="#nolink" data-stplatcd="02">웹서비스 이용약관</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="ft-con  ft-con4">
+				<div class="ft-inner">
+					<address class="ft-addr">서울시 영등포구 국회대로74길 4(여의도동) NICE평가정보㈜</address>
+					<ul class="list-ft-info clfix">
+						<li>대표이사 신희부</li>
+						<li class="last">사업자등록번호 116-81-15020</li>
+					</ul>
+					<p class="txt-copyright">ⓒ NICE INFORMATION CO., LDT.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- e: footer -->
+	</div>
+</body>
+
+</html>

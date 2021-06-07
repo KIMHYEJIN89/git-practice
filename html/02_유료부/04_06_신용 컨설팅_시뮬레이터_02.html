@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<title>삼성카드 통합플랫폼TFT</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bzw/font.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/ui.css" />
+	<script type="text/javascript" src="../../resource/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/slick.min.js"></script>
+
+  <script src="../../resource/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bzm/jquery.ui.totop.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/waypoints.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/ycounter.v3.0.js"></script>
+
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/common.js"></script>
+
+
+</head>
+
+<body>
+	<div id="wrap">
+
+		<!-- s: header -->
+		<div id="header">
+			<div class="leftMenu">
+				<a href="#none" class="btnBack">이전</a>
+				<h1 class="title">신용 컨설팅</h1>
+			</div>
+			<div class="rightMenu">
+				<a href="#none" class="btnHome">홈</a>
+				<!-- <a href="#none" class="btnGnb">메뉴 열기<span></span></a> -->
+				<!-- <a href="#none" class="btnClose">메뉴 닫기</a> -->
+			</div>
+		</div>
+		<!-- e: header -->
+
+
+		<!-- s: gnb -->
+		<!-- <div id="gnb">
+			<div class="gnbWrap">
+				<div class="gnbDimm"></div>
+				<div class="gnbCont">
+					<ul class="gnbDepth1">
+						<li><a href="#none" class="btnGnbDepth1">신용 메인</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 평점 분석</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 변동내역</a></li>
+						<li><a href="#none" class="btnGnbDepth1">나의 금융 현황</a></li>
+						<li><a href="#none" class="btnGnbDepth1 on">신용 컨설팅</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 Q&amp;A</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- s: 2depth -->
+			<div class="snbDepth2">
+				<ul class="snbLst2">
+					<li><a href="#void" class="btnDepth2">요약</a></li>
+					<li><a href="#void" class="btnDepth2">상환</a></li>
+					<li><a href="#void" class="btnDepth2">부채</a></li>
+					<li><a href="#void" class="btnDepth2">기간</a></li>
+					<li><a href="#void" class="btnDepth2">포트폴리오</a></li>
+					<li><a href="#void" class="btnDepth2 on">시뮬레이터</a></li>
+				</ul>
+			</div>
+			<!-- e: 2depth -->
+		</div>
+		<!-- e: gnb -->
+
+		<!-- s: container -->
+		<div id="container">
+
+			<div class="consultingWrap">
+				<div class="simulatorBox">
+					<div class="simBoxTop">
+						<span class="label fontNum">STEP 2</span> 여신정보를 입력해주세요.
+					</div>
+					<div class="simBoxCon">
+						<ul class="simList">
+							<li>
+								<div class="simListCon">
+									<div class="simListConTop">
+										<ul class="head">
+											<li><strong class="fontNum">1</strong></li>
+											<li><strong class="tit">기업은행</strong></li>
+											<li class="button"><a href="#none" class="btnEdit">수정</a></li>
+											<li class="button"><a href="javascript:layerPopup('layerPopWrap0');" class="btnDel">삭제</a></li>
+										</ul>
+									</div>
+									<div class="simListConMid">
+										<table class="simListTbl">
+											<caption>여신관련 정보표</caption>
+											<colgroup>
+												<col style="width:55%">
+												<col style="width:45%">
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">대출금액</th>
+													<td><strong class="fontNum">11,000</strong>천원</td>
+												</tr>
+												<tr>
+													<th scope="row">대출형태</th>
+													<td>신용</td>
+												</tr>
+												<tr>
+													<th scope="row">개설일</th>
+													<td><strong class="fontNum">2019.12.26</strong></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</li>
+							<!-- 수정일 경우-->
+							<li>
+								<div class="simListCon">
+									<div class="simListConTop">
+										<ul class="head">
+											<li><strong class="fontNum">2</strong></li>
+											<li class="paddingNarrow">
+												<select class="simSel">
+													<option>금융회사</option>
+													<option>은행</option>
+													<option>저축은행</option>
+													<option>캐피탈</option>
+												</select>
+											</li>
+											<li class="button"><a href="#none" class="btnSubmit">확인</a></li>
+											<li class="button"><a href="#none" class="btnCancel">취소</a></li>
+										</ul>
+									</div>
+									<div class="simListConMid">
+										<table class="simListTbl">
+											<caption>여신관련 정보표</caption>
+											<colgroup>
+												<col style="width:55%">
+												<col style="width:45%">
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">대출금액</th>
+													<td class="paddingNarrow"><input type="text" class="simInput type2 fontNum" value="17,541">천원</td>
+												</tr>
+												<tr>
+													<th scope="row">대출형태</th>
+													<td class="paddingNarrow">
+														<select class="simSel">
+															<option>대출형태</option>
+															<option>신용</option>
+															<option>담보</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row">개설일</th>
+													<td class="paddingNarrow">
+														<select class="simSel">
+															<option>개설일</option>
+															<option>개설일</option>
+															<option>개설일</option>
+														</select>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</li>
+							<!--// 수정일 경우-->
+							<!--정보 없는 경우-->
+							<li>
+								<div class="simListCon">
+									<div class="simListConTop empty">
+										<p class="empty">여신정보가 없습니다.</p>
+									</div>
+								</div>
+							</li>
+							<!--// 정보 없는 경우-->
+						</ul>
+						<div class="btnWrap type4">
+							<a href="#none" class="btnType type3 medium"><span class="iconType plus"></span>추가하기</a>
+						</div>
+					</div>
+					<div class="btnWrap type3">
+						<ul class="btnList clfix">
+							<li><a href="#void" class="btnType type2 medium">이전</a></li>
+							<li><a href="#void" class="btnType type1 medium">다음</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- e: consultingWrap -->
+
+		</div>
+		<!-- e: container -->
+
+
+
+		<!-- s: footer -->
+		<div id="footer">
+			<div>
+				<!-- 공지사항 -->
+				<div class="ft-con ft-con1">
+					<div class="ft-inner">
+						<dl class="dl-notice clfix">
+							<dt class="tit"><span class="ico-notice"></span>공지사항</dt>
+							<dd>
+								<a href="#nolink" id="noticeOpenPop" data-noticeseq=""><span class="notice-subject"></span></a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- 신용정보사유 코드 조회 -->
+				<div class="ft-con ft-con2">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li class="last">
+								<span class="ft-input-wrap">
+									<input type="text" id="certi_code" name="certi_code" title="신용정보사유 코드조회" placeholder="신용정보사유 코드조회">
+									<button title="새창열림" class="btn-ft-search">검색하기</button>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 약관 영역 -->
+				<div class="ft-con ft-con3">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="03"><strong>개인정보취급방침</strong></a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="06"><strong>개인정보처리방침</strong></a>
+							</li>
+						</ul>
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="01">상품 이용약관</a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="02">웹서비스 이용약관</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ft-con  ft-con4">
+					<div class="ft-inner">
+						<address class="ft-addr">서울시 영등포구 국회대로74길 4(여의도동) NICE평가정보㈜</address>
+						<ul class="list-ft-info clfix">
+							<li>대표이사 신희부</li>
+							<li class="last">사업자등록번호 116-81-15020</li>
+						</ul>
+						<p class="txt-copyright">ⓒ NICE INFORMATION CO., LDT.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e: footer -->
+	</div>
+
+	<!-- s: 삭제 팝업 -->
+	<div id="layerPopWrap0" class="layerPopWrap02">
+		<div class="popWrap">
+			<div class="popCon">
+				<p class="msg">해당 항목을 삭제하시겠습니까?</p>
+			</div>
+			<div class="btnWrap">
+				<ul class="btnList clfix">
+					<li><a href="javascript:layerPopClose();" class="btnType type2 medium ">취소</a></li>
+					<li><a href="#void" class="btnType type1 medium">확인</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- e: 삭제 팝업 -->
+</body>
+
+</html>

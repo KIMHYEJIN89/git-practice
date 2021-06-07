@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<title>삼성카드 통합플랫폼TFT</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bzw/font.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/ui.css" />
+	<script type="text/javascript" src="../../resource/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/slick.min.js"></script>
+
+  <script src="../../resource/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bzm/jquery.ui.totop.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/waypoints.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/ycounter.v3.0.js"></script>
+
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/common.js"></script>
+
+	<script>
+			$(function(){
+				$('.simulatorBox .gradeBox').waypoint(function(){
+						$('.simulatorBox .gaugeBar .bar').addClass('is-animated');
+				},{
+						offset: '80%'
+				});
+			});
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+
+		<!-- s: header -->
+		<div id="header">
+			<div class="leftMenu">
+				<a href="#none" class="btnBack">이전</a>
+				<h1 class="title">신용 컨설팅</h1>
+			</div>
+			<div class="rightMenu">
+				<a href="#none" class="btnHome">홈</a>
+				<!-- <a href="#none" class="btnGnb">메뉴 열기<span></span></a>
+				<a href="#none" class="btnClose">메뉴 닫기</a> -->
+			</div>
+		</div>
+		<!-- e: header -->
+
+
+		<!-- s: gnb -->
+		<!-- <div id="gnb">
+			<div class="gnbWrap">
+				<div class="gnbDimm"></div>
+				<div class="gnbCont">
+					<ul class="gnbDepth1">
+						<li><a href="#none" class="btnGnbDepth1">신용 메인</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 평점 분석</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 변동내역</a></li>
+						<li><a href="#none" class="btnGnbDepth1">나의 금융 현황</a></li>
+						<li><a href="#none" class="btnGnbDepth1 on">신용 컨설팅</a></li>
+						<li><a href="#none" class="btnGnbDepth1">신용 Q&amp;A</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- s: 2depth -->
+			<div class="snbDepth2">
+				<ul class="snbLst2">
+					<li><a href="#void" class="btnDepth2">요약</a></li>
+					<li><a href="#void" class="btnDepth2">상환</a></li>
+					<li><a href="#void" class="btnDepth2">부채</a></li>
+					<li><a href="#void" class="btnDepth2">기간</a></li>
+					<li><a href="#void" class="btnDepth2">포트폴리오</a></li>
+					<li><a href="#void" class="btnDepth2 on">시뮬레이터</a></li>
+				</ul>
+			</div>
+			<!-- e: 2depth -->
+		</div> 
+		<!-- e: gnb -->
+
+		<!-- s: container -->
+		<div id="container">
+
+			<div class="consultingWrap">
+				<div class="simulatorBox">
+					<h3 class="conTitH3">시뮬레이터 결과</h3>
+					<div class="gradeWrap clfix">
+						<div class="gradeBox grade1">
+							<p class="title">현재등급</p>
+							<p class="desc"><strong class="fontNum">4</strong>등급</p>
+							<div class="gaugeBar">
+								<div class="bar" style="height:40%"></div>
+							</div>
+						</div>
+						<div class="gradeBox grade2">
+							<p class="title">예상등급</p>
+							<p class="desc cType1"><strong class="fontNum">2</strong>등급</p>
+							<div class="gaugeBar">
+								<div class="bar" style="height:80%"></div>
+							</div>
+						</div>
+						<div class="pointBox">
+							<p class="percent"><strong class="fontNum _counter" data-ycount="55">55</strong>%</p>
+							변동가능성
+						</div>
+					</div>
+					<div class="blitListWrap">
+						<ul class="blitList">
+							<li>예상 신용등급은 고객님이 입력한대로 신용정보가 변경되고, 12개월간 지속될 경우에 예상되는 결과 및 변경가능성을 나타냅니다.</li>
+							<li>예상 신용등급대로 변경되지 않을 수 있으므로, 참고자료로만 활용하시기 바랍니다.</li>
+						</ul>
+					</div>
+				  <div class="anysChart pdType">
+						<h3 class="conTitH3">시뮬레이터 결과 영향도 분석</h3>
+						<table class="basicTbl">
+							<caption>시뮬레이터 결과 영향도 분석</caption>
+							<col style="width:20%;">
+							<col style="width:31%;">
+							<col style="width:auto;">
+							<thead>
+								<tr>
+									<th scope="col">영향순위</th>
+									<th scope="col">정보구분</th>
+									<th scope="col">변경 항목</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="fontNum">1</span></td>
+									<td>연체관리</td>
+									<td class="left">채무불이행 금액, <br>단기연체 금액, <br>단기연체 최장기간(일)</td>
+								</tr>
+								<tr>
+									<td><span class="fontNum">2</span></td>
+									<td>여신관리</td>
+									<td class="left">신용대출 총액, <br>담보대출 총액, <br>대출업체 수</td>
+								</tr>
+								<tr>
+									<td><span class="fontNum">3</span></td>
+									<td>신용카드<br>관리</td>
+									<td class="left">일시불 평균금액, <br>할부 평균금액</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="blitListWrap">
+							<ul class="blitList">
+								<li>본 시뮬레이션은 변경조건 하에서 신용등급의 변화를 경향적으로 보여주는 것으로 다른 목적으로 활용될 수 없습니다.</li>
+							</ul>
+						</div>
+						<div class="btnWrap">
+							<a href="#void" class="btnType type1 medium">시뮬레이터 다시하기</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- s: 유의사항 -->
+				<div class="noticeWrap type2">
+					<h3 class="noticeTit">유의사항</h3>
+					<div class="infoCont">
+						<ul class="list">
+							<li>연체가 발생했을 경우 연체금액 전체를 상환하는 것이 중요하며, 분할 상환할경우 연체기간이 길어져서 오히려 신용에 불이익이 될 수 있습니다.</li>
+							<li>연체금액이 커서 일시상환이 곤란할 경우에는 신용회복 위원회 등의 지원기관과 먼저 상담하는 것을 권장합니다.</li>
+							<li>채무불이행의 경우 연체금 상환 후에도 기록보존기간 등의 적용을 받을 수 있으므로 신용등급은 단기간에 급격히 상승하지 않고, 완만히 상승하게 됩니다.</li>
+							<li>대출금의 경우에는 이자율이 높은 순으로 상환 계획을 잡는것이 유리합니다.</li>
+							<li>실제 대출 등의 여신정보 평가에는 금액 외에도 기간, 업권 등 다양한 요소들이 평가 요소로 활용될 수 있습니다.</li>
+							<li>신용카드는 본인 명의의 신용카드로 한정되며, 가족카드는 개설자 명의로 반영됩니다. 체크카드 이용실적은 개인신용평가에 반영되지 않습니다.</li>
+							<li>동일 기관에서 2회 이상 조회를 할 경우에는 처음 산출된 등급으로 최초 조회일부터 최대 <em class="fontNum">30</em>일까지 제한되어 제공될 수 있습니다.</li>
+						</ul>
+					</div>
+					<button type="button" class="btnMore">더보기</button>
+				</div>
+				<!-- e: 유의사항 -->
+			</div>
+			<!-- e: consultingWrap -->
+
+		</div>
+		<!-- e: container -->
+
+
+
+		<!-- s: footer -->
+		<div id="footer">
+			<div>
+				<!-- 공지사항 -->
+				<div class="ft-con ft-con1">
+					<div class="ft-inner">
+						<dl class="dl-notice clfix">
+							<dt class="tit"><span class="ico-notice"></span>공지사항</dt>
+							<dd>
+								<a href="#nolink" id="noticeOpenPop" data-noticeseq=""><span class="notice-subject"></span></a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- 신용정보사유 코드 조회 -->
+				<div class="ft-con ft-con2">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li class="last">
+								<span class="ft-input-wrap">
+									<input type="text" id="certi_code" name="certi_code" title="신용정보사유 코드조회" placeholder="신용정보사유 코드조회">
+									<button title="새창열림" class="btn-ft-search">검색하기</button>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 약관 영역 -->
+				<div class="ft-con ft-con3">
+					<div class="ft-inner">
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="03"><strong>개인정보취급방침</strong></a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="06"><strong>개인정보처리방침</strong></a>
+							</li>
+						</ul>
+						<ul class="footer-menu">
+							<li>
+								<a href="#nolink" data-stplatcd="01">상품 이용약관</a>
+							</li>
+							<li class="last">
+								<a href="#nolink" data-stplatcd="02">웹서비스 이용약관</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ft-con  ft-con4">
+					<div class="ft-inner">
+						<address class="ft-addr">서울시 영등포구 국회대로74길 4(여의도동) NICE평가정보㈜</address>
+						<ul class="list-ft-info clfix">
+							<li>대표이사 신희부</li>
+							<li class="last">사업자등록번호 116-81-15020</li>
+						</ul>
+						<p class="txt-copyright">ⓒ NICE INFORMATION CO., LDT.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- e: footer -->
+	</div>
+
+</body>
+
+</html>

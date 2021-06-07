@@ -1,0 +1,781 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+	<title>삼성카드 통합플랫폼TFT</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=euc-kr" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bzw/font.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/ui.css" />
+	<link rel="stylesheet" type="text/css" href="../../resource/css/bam/ssc/cp/free.css" />
+	<script type="text/javascript" src="../../resource/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/slick.min.js"></script>
+
+	<script type="text/javascript" src="../../resource/js/bzm/jquery.ui.totop.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/waypoints.min.js"></script>
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/ycounter.v3.0.js"></script>
+
+	<script type="text/javascript" src="../../resource/js/bam/ssc/cp/common.js"></script>
+
+	<script type="text/javascript">
+	$(function(){
+
+		$('.gaugeChartWrap').addClass('is-animated');
+		$('.bxDataNone').waypoint(function() {
+			$(this).addClass('is-animated');
+		}, {
+			offset: '80%'
+		});
+
+		// 페이지 슬라이더 생성
+		var $wrapperSlider = $('.sliderWrap')
+			 , wrapperSlider = $wrapperSlider[0];
+
+		$wrapperSlider.slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			adaptiveHeight: true,
+			swipe: true,
+			arrows: false,
+			dots: true,
+			customPaging: function(slider, idx){
+				var target = $(slider.$slides[idx]).find('.slideItem')
+					, tabTxt = target.data('title')
+					, result = '<a href="#'+idx+'" class="btnTab">'+ tabTxt +'</a>';
+				return result;
+			}
+		}).on('afterChange', function(event, slick, currentSlide){
+			//$('#header .title').text($wrapperSlider.find('.slick-dots .slick-active').text());  20201015 사용안함
+
+			setTimeout(function(){
+				if($('.sliderWrap .slick-dots > li').length){
+					var posLeft = 0;
+					for(var i=0; i<currentSlide; i++){
+						if($('.slick-dots > li').eq(0).hasClass('slick-active')){
+						}else{
+							posLeft += $('.sliderWrap .slick-dots > li').eq(i).outerWidth();
+						}
+					}
+					$('.sliderWrap .slick-dots').stop().animate({
+						'scrollLeft':posLeft -25
+					}, 300);
+				}
+			}, 50);
+
+		}).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+			$('html, body').scrollTop(0);
+			$wrapperSlider.find('.is-animated').removeClass('is-animated');
+
+
+			$('.gaugeChart .gaugeBar').css('stroke-dashoffset', '');
+
+
+			$('.dataNoneWrap').waypoint(function() {
+				$(this).addClass('is-animated');
+			}, {
+				offset: '80%'
+			});
+
+			if(nextSlide == 0){
+				//메인
+				gaugeChart(chartNumValue);
+				$('.gaugeChartWrap').addClass('is-animated');
+
+				$('.bxDataNone').waypoint(function() {
+					$(this).addClass('is-animated');
+				}, {
+					offset: '80%'
+				});
+
+			} else if(nextSlide == 1){
+				// 조회내역
+			} else if(nextSlide == 2){
+				// 변동내역
+			} else if(nextSlide == 3){
+				// 대출
+			} else if(nextSlide == 4){
+				// FAQ
+			}
+
+		});
+
+		// 신용평점 그래프
+		var chartGradeValue= $('.gaugeChartWrap').data('grade');
+		var imgPtrn = $('#gaugePtrn image').attr('xlink:href');
+		var imgPtrnOrigin = imgPtrn.split('graph_con')[1];
+		var imgPtrnChange = chartGradeValue + '.png';
+		var imgPtrnSrc = $('#gaugePtrn image').attr('xlink:href').replace(imgPtrnOrigin, imgPtrnChange);
+		$('#gaugePtrn image').attr('xlink:href', imgPtrnSrc);
+
+		var chartNumValue= $('.gaugeChart').data('value');
+		// 신용평점 애니메이션
+		gaugeChart(chartNumValue);
+		if( chartNumValue == 0){
+			$('#gaugePtrn').css('display', 'none');
+		}
+
+		// 퀵버튼
+		$('body').on('click', '.btnQuick', function(){
+      $wrapperSlider.slick('slickGoTo', 4);
+    });
+
+		// 신용Q&A
+		$('body').on('click', '.tabWrap .btnTab', function(){
+				var wrap    = $(this).closest('.tabWrap')
+					, depth   = wrap.data('tab')
+					, btnWrap = $(this).closest('.tabBtnWrap')
+					, inner   = wrap.find('.tabInner[data-tab="'+ depth +'"]')
+					, idx     = $(this).closest('li').index();
+
+				if(!$(this).hasClass('on')){
+						btnWrap.find('.on').removeClass('on');
+						$(this).addClass('on');
+						inner.removeClass('on').eq(idx).addClass('on');
+				}
+				$wrapperSlider.slick('slickGoTo', 4);
+		});
+
+	});
+
+
+	function gaugeChart(data){
+		var gaugeBar = document.querySelectorAll('.gaugeBar');
+
+		Array.prototype.forEach.call(gaugeBar, function(path){
+				var length = path.getTotalLength()
+					, moveTo = length * ((100 + data)/100)
+					, pathSize 	 = path.getTotalLength();
+
+				if(data == 0) moveTo += 1;
+				path.getBoundingClientRect();
+				path.style.strokeDashoffset = Math.max(0, moveTo);
+
+				// state move
+				$({countNum: 0}).stop().animate({
+					countNum : data
+				},{
+					duration : 1400,
+					step     : function(){
+						var a = Math.floor(pathSize)
+							, b = (this.countNum*pathSize)/100
+							, c = path.getPointAtLength(b);
+
+						$('.gaugeState').css('transform','translate3d('+ -(Math.round(c.x)/2) + 'px, ' + Math.round(c.y)/2 + 'px, 0)');
+					},
+					complete : function() {
+					}
+				});
+		});
+	}
+
+
+	</script>
+
+</head>
+
+<body>
+	<div id="wrap">
+
+		<!-- s: header -->
+		<div id="header">
+			<div class="leftMenu">
+				<a href="#none" class="btnBack">이전</a>
+				<h1 class="title">신용</h1>
+			</div>
+			<div class="rightMenu">
+				<a href="#none" class="btnHome">홈</a>
+			</div>
+		</div>
+		<!-- e: header -->
+
+		<!-- s: section -->
+		<div id="section">
+			<!-- s: container -->
+			<div id="container">
+
+
+
+				<div class="sliderWrap">
+					<!-- s: 메인 -->
+					<div class="slideItem slideGrade" data-title="메인">
+
+						<!-- s: main grade -->
+						<div class="mainBx mainGrade">
+							<div class="titWrap">
+								<h3 class="title">신용평점</h3>
+							</div>
+
+							<!-- s: 차트영역 -->
+							<!-- ***** data-grade 값 : 매우우수 : 1 / 우수 : 2 / 보통 : 3 / 다소우려 : 4 / 우려 : 5 / 산출불가 : null -->
+							<div class="gaugeChartWrap" data-grade="4">
+								<div class="gaugeChartInfo">
+									<div class="inner">
+										<dl class="gaugeChartTxt">
+											<dt class="hidden">신용상태</dt>
+											<dd>다소우려</dd>
+										</dl>
+									</div>
+								</div>
+								<p class="guageChartPoint start"><span class="hidden">최저점수</span>0</p>
+								<p class="guageChartPoint end"><span class="hidden">최고점수</span>1,000</p>
+								<div class="gaugeState"></div>
+
+								<!-- s: 차트 -->
+								<!-- ***** 그래프 컨트롤 data-value 0 - 100 -->
+								<svg xmlns="http://www.w3.org/2000/svg" class="gaugeChart" width="195" height="112" viewBox="0 0 390 224" data-value="80">
+									<pattern id="gaugeBgPtrn" patternUnits="userSpaceOnUse" width="390" height="224">
+										<image xlink:href="../../resource/img/bam/ssc/cp/graph_bg.png" x="0" y="0" width="390" height="224"></image>
+									</pattern>
+									<pattern id="gaugePtrn" patternUnits="userSpaceOnUse" width="390" height="224">
+										<image xlink:href="../../resource/img/bam/ssc/cp/graph_con1.png" x="0" y="0" width="390" height="224"></image>
+									</pattern>
+									<path class="gaugeBg" stroke="#e9ebef" fill="none" d="M377.34,212.8c0.6-6.03,0.92-12.15,0.92-18.34C378.26,93.25,296.21,11.2,195,11.2S11.74,93.25,11.74,194.46  c0,6.19,0.32,12.31,0.92,18.34" />
+									<path class="gaugeBar"  fill="none" stroke-dasharray="614" stroke-dashoffset="614" d="M377.34,212.8c0.6-6.03,0.92-12.15,0.92-18.34C378.26,93.25,296.21,11.2,195,11.2S11.74,93.25,11.74,194.46  c0,6.19,0.32,12.31,0.92,18.34" />
+								</svg>
+								<!-- e: 차트 -->
+							</div>
+							<!-- e: 차트영역 -->
+
+							<!-- s: 랭킹상세영역 -->
+							<div class="gradeBox">
+								<ul class="gradeInfo">
+									<li class="rank">
+										<dl>
+											<dt>랭킹</dt>
+											<dd>상위 <span class="fontNum">4</span><span class="fontNum">%</span></dd>
+										</dl>
+									</li>
+									<li class="average">
+										<dl>
+											<dt>또래 평균</dt>
+											<dd><span class="fontNum">827</span>점</dd>
+										</dl>
+									</li>
+								</ul>
+								<a href="#none" class="btnLink" tabindex="0">내 점수 확인하기</a>
+							</div>
+							<!-- e: 랭킹상세영역 -->
+						</div>
+						<!-- e: main grade -->
+
+						<!-- s: 신용기록 -->
+						<div class="mainBx bdType">
+							<div class="titWrap">
+								<h3 class="title">신용기록</h3>
+							</div>
+							<a href="#none" class="mainBan" data-record="융자/대출">
+								<strong class="tit"><span>KB국민은행 융자/대출</span>건으로 <br>신용정보가 조회되었어요.</strong>
+								<span class="date fontNum">2020.9.20</span>
+							</a>
+							<ul class="mainLst">
+								<li>
+									<a href="#none" class="linkLst">
+										<strong class="tit">조회내역</strong>
+										<span class="sub"><span class="fontNum">21</span>건</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" class="linkLst">
+										<strong class="tit">변동내역</strong>
+										<span class="sub"><span class="fontNum">0</span>건</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- e: 신용기록 -->
+
+						<!-- s: 나의 금융 현황 -->
+						<div class="mainBx lineType">
+							<div class="titWrap">
+								<h3 class="title">나의 금융 현황</h3>
+							</div>
+							<ul class="mainLst">
+								<li>
+									<a href="#none" class="linkLst">
+										<strong class="tit">신용카드 발급 가능성</strong>
+										<span class="sub cPoint1">확인하기</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" class="linkLst">
+										<strong class="tit">대출잔액</strong>
+										<span class="sub"><span class="fontNum">242,304</span>천원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" class="linkLst">
+										<strong class="tit">연체내역</strong>
+										<span class="sub cPoint1">확인하기</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="moreInfo">
+								<li>
+									<a href="#none" class="linkInfo">
+										<strong class="tit">신용 컨설팅</strong>
+										<span class="txt">내 금융 활동 진단 결과보기</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- e: 나의 금융 현황 -->
+
+						<!-- s: NICE신용관리-->
+						<div class="mainBx bdType">
+							<div class="titWrap">
+								<h3 class="title">NICE신용관리, <br>이런 분들께 추천드립니다.</h3>
+							</div>
+							<ul class="creditLst">
+								<li data-credit="신용변화">신용변화를 실시간으로 관리하고 싶은 분</li>
+								<li data-credit="신용상태">내 미래 신용상태를 예측하고 싶은 분</li>
+							</ul>
+							<a href="#none" class="btnComm">NICE 신용관리 이용하기</a>
+						</div>
+						<!-- e: NICE신용관리 -->
+
+
+					</div>
+					<!-- e: 메인 -->
+
+
+					<!-- s: 신용조회 -->
+					<div class="slideItem slideInquiry" data-title="조회내역">
+						<div class="sec">
+							<div class="titWrap">
+								<h3 class="title">신용조회알림</h3>
+							</div>
+							<div class="noticeBox">
+								<ul class="list">
+									<li>
+										<a href="#none" class="btnLink" data-notice="신용조회">
+											<strong class="name">신용조회</strong> 다수 보유
+										</a>
+									</li>
+								</ul>
+								<p class="txtInfo">어디서, 왜 신용조회가 발생했을까요?</p>
+							</div>
+						</div>
+
+						<div class="sec">
+							<div class="titWrap">
+								<h3 class="title">신용조회이력</h3>
+							</div>
+							<div class="timeWrap">
+								<ul class="timeLst type2 detailType">
+									<li>
+										<p class="timeDate">2020.06</p>
+										<div class="timeCnt">
+											<strong class="timeState"><span class="cPoint1">삼성카드</span></strong> 에서<br />
+											<strong class="timeState"><span class="cPoint1">신용카드발급</span></strong> 의 사유로<br />
+											<strong class="timeState cPoint2">신용조회기록</strong>이 발생하였습니다.
+											<a href="#none" class="btnTime">유료가입 링크</a>
+										</div>
+									</li>
+									<li>
+										<p class="timeDate">2020.06</p>
+										<div class="timeCnt">
+											<a href="#none" class="btnTime typeDetail">더 보기</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="guideInfo typeInquiry">
+								<p class="txtStrong">아직 확인하지 못한 내역이 <a href="#none" class="count">21건</a> 더 있어요.</p>
+								<p class="txtNormal">나의 신용정보를 자주 확인하는 것,<br />신용관리의 첫 걸음입니다.</p>
+							</div>
+							<div class="btnRound"><a href="#none" class="btn">나머지 신용조회기록 확인하기</a></div>
+						</div>
+					</div>
+					<!-- e: 조회내역 -->
+
+
+					<!-- s: 변동내역 -->
+					<div class="slideItem slideChange" data-title="변동내역">
+						<div class="sec">
+							<div class="titWrap">
+								<h3 class="title">신용변동알림</h3>
+							</div>
+							<div class="noticeBox">
+								<ul class="list">
+									<li>
+										<a href="#none" class="btnLink" data-notice="신용변동">
+											<strong class="name">신용변동</strong> 다수 보유
+										</a>
+									</li>
+								</ul>
+								<p class="txtInfo">신용변동 상세내역 팩트체크!</p>
+							</div>
+						</div>
+
+						<div class="sec">
+							<div class="titWrap">
+								<h3 class="title">최근 한달간 신용변동 타임라인</h3>
+							</div>
+							<div class="timeWrap">
+								<!-- ***** data-timestate 대출정보, 신용거래정보, 신용평점, 연체정보 ***** -->
+								<ul class="timeLst type3 detailType">
+									<li>
+										<p class="timeDate">2020.06</p>
+										<div class="timeCnt" data-timestate="신용평점">
+											<strong class="timeState">신용평점 변동 발생</strong><span class="txt">상세보기</span>
+											<a href="#none" class="btnTime">유료가입 링크</a>
+										</div>
+									</li>
+									<li>
+										<p class="timeDate">2020.06</p>
+										<div class="timeCnt" data-timestate="대출정보">
+											<strong class="timeState">대출정보 변동 발생</strong><span class="txt">상세보기</span>
+											<a href="#none" class="btnTime">유료가입 링크</a>
+										</div>
+									</li>
+									<li>
+										<p class="timeDate">2020.06</p>
+										<div class="timeCnt" data-timestate="신용거래정보">
+											<strong class="timeState">신용거래정보 변동 발생</strong><span class="txt">상세보기</span>
+											<a href="#none" class="btnTime">유료가입 링크</a>
+										</div>
+									</li>
+									<li>
+										<p class="timeDate">2020.06</p>
+										<div class="timeCnt" data-timestate="연체정보">
+											<strong class="timeState">연체정보 변동 발생</strong><span class="txt">상세보기</span>
+											<a href="#none" class="btnTime">유료가입 링크</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="guideInfo typeChange">
+								<p class="txtNormal">신용관리는 금융활동의 시작이자,<br /><span class="txtStrong">중요한 자산입니다.</span></p>
+							</div>
+							<div class="btnRound"><a href="#none" class="btn">신용변동 확인하기</a></div>
+						</div>
+					</div>
+					<!-- e: 변동내역 -->
+
+					<!-- s: 대출 -->
+					<div class="slideItem slideLoan" data-title="대출">
+						<div class="sec">
+							<div class="titWrap">
+								<h3 class="title">대출알림</h3>
+							</div>
+							<div class="noticeBox">
+								<ul class="list">
+									<li>
+										<a href="#none" class="btnLink" data-notice="대출정보">
+											<strong class="name">대출정보</strong> 다수 보유
+										</a>
+									</li>
+								</ul>
+								<p class="txtInfo">부채관리는 신용관리의 기본입니다.</p>
+							</div>
+						</div>
+
+						<div class="sec">
+							<div class="titWrap">
+								<h3 class="title">대출잔액</h3>
+							</div>
+							<div class="boxWrap">
+								<div class="freeGraph">
+									신 퓨전차트 준용<br />(꺾은 선 그래프, 위치값 실데이터 사용)
+								</div>
+							</div>
+						</div>
+
+						<div class="sec">
+							<div class="titWrap">
+								<h3 class="title">대출이력</h3>
+							</div>
+							<div class="timeWrap">
+								<!-- ***** data-timestate 상승 : up, 하락 : down, 동일 equals ***** -->
+								<ul class="timeLst type1 detailType">
+									<li>
+										<p class="timeDate">2020.06</p>
+										<div class="timeCnt" data-timestate="up">
+											<p class="timeMoney"><strong class="fontNum _counter" data-ycount="1,999,000">1,999,000</strong>천원</p>
+											<p class="timeTxt">
+												5월보다 <strong class="timePrice">1,000,000</strong>천원<br />
+												늘었는지 확인하세요.
+											</p>
+											<a href="#none" class="btnTime">유료가입 링크</a>
+										</div>
+									</li>
+									<li>
+										<p class="timeDate">2020.06</p>
+										<div class="timeCnt" data-timestate="down">
+											<p class="timeMoney"><strong class="fontNum _counter" data-ycount="999,000">999,000</strong>천원</p>
+											<p class="timeTxt">
+												4월보다 <strong class="timePrice">1,000,000</strong>천원<br />
+												줄었는지 확인하세요.
+											</p>
+											<a href="#none" class="btnTime">유료가입 링크</a>
+										</div>
+									</li>
+									<li>
+										<p class="timeDate">2020.06</p>
+										<div class="timeCnt">
+											<a href="#none" class="btnTime typeDetail">더 보기</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="guideInfo typeLoan">
+								<p class="txtStrong">대출관리는 신용을 높이는 첫걸음!</p>
+								<p class="txtNormal">건전한 신용에 우량한 금리가 깃듭니다.<br />평소 꾸준한 신용관리로 이자비용을 절약하세요!</p>
+							</div>
+							<div class="btnRound"><a href="#none" class="btn">대출 관리하기</a></div>
+						</div>
+					</div>
+					<!-- e: 대출 -->
+
+					<!-- s: FAQ -->
+					<div class="slideItem slideQna" data-title="FAQ">
+						<div class="sec">
+							<div class="tabWrap qnaWrap">
+								<ul class="tabBtnWrap">
+									<li><a href="#none" class="btnTab on">연체</a></li>
+									<li><a href="#none" class="btnTab">대출</a></li>
+									<li><a href="#none" class="btnTab">카드</a></li>
+									<li><a href="#none" class="btnTab">조회</a></li>
+								</ul>
+								<div class="tabCont">
+									<!-- s: 연체 -->
+									<div class="tabInner on">
+										<div class="faqTalk">
+											<div class="faqTalkLst">
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon"><strong>연체</strong>하고 <strong>갚으면 신용도</strong>가 바로올라가나요?</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon"><strong>낮아진 신용도는 연체를 갚는다고 바로 좋아지지 않는답니다.</strong><br />심지어 연체는 갚더라도 <span class="pointColor1"><em class="fontNum pointColor1">3</em>년간 신용평가에 활용되는 경우가 있어요.</span></p>
+														<p class="faqBalloon">통신비 등 적은금액이더라도 <strong>연체하지 않는 습관</strong>을 길러요!</p>
+													</div>
+												</div>
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon"><strong>연체가 있다면</strong> 어떻게 <strong>계획</strong>을 세워 <strong>갚는 것</strong>이 좋을까요?</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon">연체는 없는게 가장 좋지만 이미 연체가 있다면 <strong>가장 오래된 연체</strong>를 먼저 갚는 것이 좋아요.</p>
+														<p class="faqBalloon"><strong>연체기간이 길수록, 연체금액이 클수록, 연체 횟수가 많을 수록 신용평가</strong>에 <strong>부정적</strong>인 영향을 줘요.</p>
+													</div>
+												</div>
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon"><strong>연체 상환 독촉 전화</strong>가 계속와서 힘들어요.</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon">연체 상환 독촉 전화를 받는 일은 고역이지만 일부러 피하다보면 생각지 못한 더 큰 피해를 입을 수 있어요.</p>
+														<p class="faqBalloon">계속해서 체크하고 빨리 연체를 갚는 것이 신용을 올바르게 잘 지키는 길이에요.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="guideInfo typeQna">
+											<p class="txtNormal"><span class="txtStrong">대출관리는 신용을 높이는 첫걸음!</span><br /><br />건전한 신용에 우량한 금리가 깃듭니다.<br />평소 꾸준한 신용관리로 이자비용을 절약하세요!</p>
+										</div>
+										<div class="btnRound"><a href="#none" class="btn">연체 관리하기</a></div>
+									</div>
+									<!-- e: 연체 -->
+
+									<!-- s: 대출 -->
+									<div class="tabInner">
+										<div class="faqTalk">
+											<div class="faqTalkLst">
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon"><strong>친한 친구</strong>가 <strong>보증</strong>을 서달라고 하는데요, 어쩌죠?</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon"><strong>보증은 곧 대출</strong>입니다.<br />보증을 서준다는 것은 대출받는다는 것을 의미합니다.</p>
+														<p class="faqBalloon">대신 갚아줄 생각이 아니라면 <strong>친한 사이에도 보증은 피하는 것</strong>이 좋습니다.</p>
+													</div>
+												</div>
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon">여윳돈이 생겼는데 적금을 가입할지 대출을 갚을지 고민이에요.</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon">먼저 <strong>적금과 대출의 이자율을 비교</strong>해보고 어떤 것으로 할지 고민해보세요.</p>
+														<p class="faqBalloon">만약 대출 이자가 적금 이자율보다 높다면 대출을 먼저 상환하고 적금은 그 뒤에 해도 늦지 않겠죠?!</p>
+													</div>
+												</div>
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon">급전이 필요한데 <strong>현금서비스</strong>를 이용해볼까 생각 중이에요.</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon"><strong>현금서비스를 사용한 빈도와 규모가 클수록 신용평점에 부정적인 영향</strong>을 준답니다.</p>
+														<p class="faqBalloon">편리함엔 늘 함정이 있어요.<br />사용하기 전에 꼭 필요한지 한번 더 생각해보세요.</p>
+													</div>
+												</div>
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon">아니면 <strong>대부업체</strong>를 이용해볼까요?</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon">대출이 필요하면 제도권 금융회사를 먼저 이용하고, 대부업체를 이용해야 한다면 <strong>등록된 대부업체</strong>인지 확인해야 해요.</p>
+														<p class="faqBalloon">급하다고 <strong>불법 대부업체</strong>를 이용하는 순간 <strong>내 신용은 뇌사 상태</strong>에 빠질 수도 있답니다.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="guideInfo typeQna">
+											<p class="txtStrong">대출관리는 신용을 높이는 첫걸음!</p>
+											<p class="txtNormal">건전한 신용에 우량한 금리가 깃듭니다.<br />평소 꾸준한 신용관리로 이자비용을 절약하세요!</p>
+										</div>
+										<div class="btnRound"><a href="#none" class="btn">대출 관리하기</a></div>
+									</div>
+									<!-- e: 대출 -->
+
+									<!-- s: 카드 -->
+									<div class="tabInner">
+										<div class="faqTalk">
+											<div class="faqTalkLst">
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon">카드 값이 많이 나와서 다른 카드로 막을지 고민이네요.</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon">카드를 많이 써서 제 때 상환하지 못해 다른 카드로 돌려 막거나 금융권 대출을 활용하게 되면 여러 사유와 맞물려 신용도가 하락 할 수 있어요.</p>
+														<p class="faqBalloon">내 상환능력에 맞게 맞춤 소비하는 것이 신용관리의 첫 걸음이라는 사실을 잊지 마세요~</p>
+													</div>
+												</div>
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon">신용도를 올리려고 신용카드를 안 쓰고 있는데 생각보다 신용도가 낮아요.</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon">신용카드는 안쓰기 보단 잘 써야 합니다. 신용카드 사용실적과 같은 신용거래기록은 아예 없는 것보단 있는 것이 신용도에 유리해요.</p>
+														<p class="faqBalloon">건전한 신용카드 사용실적을 갖고 있는 경우 신용위험도가 낮은 것으로 평가되기 때문에 신용도를 올릴 수 있어요.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="guideInfo typeQna">
+											<p class="txtNormal"><span class="txtStrong">카드는 안쓰기 보다는 잘 써야 합니다.</span><br />수시로 관리하는 습관을 길러보세요.</p>
+										</div>
+										<div class="btnRound"><a href="#none" class="btn">신용 관리하기</a></div>
+									</div>
+									<!-- e: 카드 -->
+
+									<!-- s: 신용조회 -->
+									<div class="tabInner">
+										<div class="faqTalk">
+											<div class="faqTalkLst">
+												<div class="faqTalkBx">
+													<div class="faqQ">
+														<p class="faqBalloon">신용조회를 자주하면 신용평점이 떨어지나요?</p>
+													</div>
+													<div class="faqA">
+														<p class="faqBalloon">신용조회를 자주하면 신용평점이 떨어진다는 건 옛말이에요. 2011년 10월부터 신용조회를 해도 평점산정 시 반영되지 않습니다.</p>
+														<p class="faqBalloon">평소에 본인의 <strong>신용평점을 수시로 확인</strong>하고, 꾸준히 관리하는 습관을 길러보세요!</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="guideInfo typeQna">
+											<p class="txtStrong">현재 신용조회기록이 <a href="#none" class="count">2건</a> 있습니다.</p>
+											<p class="txtNormal">나의신용정보를 자주 확인하는것,<br />신용관리의 첫 걸음입니다. </p>
+										</div>
+										<div class="btnRound"><a href="#none" class="btn">신용조회 확인하기</a></div>
+									</div>
+									<!-- e: 신용조회 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- e: FAQ -->
+				</div>
+
+				<!-- <a href="#none" class="btnQuick">Q&amp;A 바로가기</a> -->
+
+			</div>
+			<!-- e: container -->
+		</div>
+		<!-- e: section -->
+
+
+
+
+		<!-- s: footer -->
+		<div id="footer">
+			<!-- s: 공지사항 -->
+			<div class="ft-con ft-con1">
+				<div class="ft-inner">
+					<dl class="dl-notice clfix">
+						<dt class="tit">
+							<span class="ico-notice"></span>공지사항
+						</dt>
+						<dd>
+							<a href="#nolink" id="noticeOpenPop" data-noticeseq="0000000008">
+								<span class="notice-subject">
+									웹서비스 이용약관 변경에 따른 사전공지 안내
+								</span>
+							</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<!-- e: 공지사항 -->
+			<!-- s: 신용정보사유 코드 조회 -->
+			<div class="ft-con ft-con2">
+				<div class="ft-inner">
+					<ul class="footer-menu">
+						<li class="last">
+							<span class="ft-input-wrap">
+								<input type="number" class="filter[1,4]:num" oninput="maxLengthCheck(this)" id="certi_code" name="certi_code" title="신용정보사유 코드조회" placeholder="신용정보사유 코드조회" lengthtype="length" minlength="1" maxlength="4">
+								<button title="새창열림" class="btn-ft-search">검색하기</button>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- e: 신용정보사유 코드 조회 -->
+			<!-- s: 약관 영역 -->
+			<div class="ft-con ft-con3">
+				<div class="ft-inner">
+					<ul class="footer-menu">
+						<li>
+							<a href="#nolink" data-stplatcd="02">
+								<strong>웹서비스 이용약관</strong>
+							</a>
+						</li>
+						<li class="last">
+							<a href="#nolink" data-stplatcd="03">
+										<strong>개인정보처리방침</strong>
+									</a>
+						</li>
+					</ul>
+					<ul class="footer-menu">
+						<li>
+							<a href="#nolink" data-stplatcd="01">
+								상품 이용약관
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- e: 약관 영역 -->
+			<div class="ft-con ft-con4">
+				<div class="ft-inner">
+					<address class="ft-addr">서울시 영등포구 국회대로74길 4(여의도동) NICE평가정보㈜</address>
+					<ul class="list-ft-info clfix">
+						<li>대표이사 심의영</li>
+						<li class="last">사업자등록번호 116-81-15020</li>
+					</ul>
+					<p class="txt-copyright">ⓒ NICE INFORMATION CO., LTD.</p>
+				</div>
+			</div>
+		</div>
+		<!-- e: footer -->
+	</div>
+</body>
+
+</html>
